@@ -1,0 +1,106 @@
+﻿Build started 4/21/2014 6:10:06 PM.
+     1>Project "E:\dev\otg_nomad\trunk\ffmpeg\libswresample\libswresample_prx\libswresample_prx.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "ORBIS_Debug\libswresample_prx.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "ORBIS_Debug\libswresample_prx.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         audioconvert.c
+         orbis-clang.exe -o ORBIS_Debug\audioconvert.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\audioconvert.c
+         dither.c
+         orbis-clang.exe -o ORBIS_Debug\dither.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\dither.c
+         log2_tab.c
+         orbis-clang.exe -o ORBIS_Debug\log2_tab.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\log2_tab.c
+         rematrix.c
+         orbis-clang.exe -o ORBIS_Debug\rematrix.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\rematrix.c
+         In file included from E:\dev\otg_nomad\trunk\ffmpeg\libswresample\rematrix.c:21:
+         In file included from ../swresample_internal.h:25:
+     1>../..\libavutil/channel_layout.h(26,8): warning : 'PRX_INTERFACE' macro redefined
+         ../..\libavutil/cpu.h(27,8) :  note: previous definition is here
+         In file included from E:\dev\otg_nomad\trunk\ffmpeg\libswresample\rematrix.c:21:
+         In file included from ../swresample_internal.h:24:
+     1>../swresample.h(265,11): warning : dllimport attribute ignored [-Wignored-attributes]
+         resample.c
+         orbis-clang.exe -o ORBIS_Debug\resample.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\resample.c
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\resample.c(138,15): warning : 8 enumeration values not handled in switch: 'AV_SAMPLE_FMT_NONE', 'AV_SAMPLE_FMT_U8', 'AV_SAMPLE_FMT_S16'... [-Wswitch]
+         swresample-test.c
+         orbis-clang.exe -o ORBIS_Debug\swresample-test.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample-test.c
+         swresample.c
+         orbis-clang.exe -o ORBIS_Debug\swresample.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c
+         In file included from E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c:23:
+         In file included from ../swresample_internal.h:25:
+     1>../..\libavutil/channel_layout.h(26,8): warning : 'PRX_INTERFACE' macro redefined
+         ../..\libavutil/cpu.h(27,8) :  note: previous definition is here
+         In file included from E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c:23:
+         In file included from ../swresample_internal.h:24:
+     1>../swresample.h(302,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(307,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(312,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(254,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(159,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(195,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(203,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(166,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c(722,23): warning : 8 enumeration values not handled in switch: 'AV_SAMPLE_FMT_NONE', 'AV_SAMPLE_FMT_U8', 'AV_SAMPLE_FMT_S16'... [-Wswitch]
+         In file included from E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c:23:
+         In file included from ../swresample_internal.h:24:
+     1>../swresample.h(173,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(223,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(270,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(275,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(297,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(244,11): warning : dllimport attribute ignored [-Wignored-attributes]
+     1>../swresample.h(239,11): warning : dllimport attribute ignored [-Wignored-attributes]
+         swresample_x86.c
+         orbis-clang.exe -o ORBIS_Debug\swresample_x86.o -c -MD -fdiagnostics-format=msvc -I../../ -I../ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O0 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(56,48): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(56,48) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(56,112): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(56,112) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(62,44): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(62,44) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(62,108): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(62,108) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(64,44): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(64,44) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(64,108): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(64,108) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(66,44): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(66,44) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(66,108): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(66,108) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(68,44): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(68,44) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(68,108): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(68,108) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(72,48): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(72,48) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(72,112): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(72,112) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(81,49): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(81,49) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(81,113): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(81,113) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(120,48): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(120,48) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(120,112): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(120,112) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(129,44): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(129,44) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(129,108): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(129,108) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(132,48): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(132,48) :  note: place parentheses around the '&&' expression to silence this warning
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(132,112): warning : '&&' within '||' [-Wlogical-op-parentheses]
+         E:\dev\otg_nomad\trunk\ffmpeg\libswresample\x86\swresample_x86.c(132,112) :  note: place parentheses around the '&&' expression to silence this warning
+       Link:
+         C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\bin\orbis-clang.exe -o "E:\dev\otg_nomad\trunk\VE\ORBIS_Debug\libswresample_prx.prx" -Wl,-oformat=prx -Wl,-prx-stub-output-dir="E:\dev\otg_nomad\trunk\VE\ORBIS_Debug" -Wl,--start-group ORBIS_Debug\audioconvert.o ORBIS_Debug\dither.o ORBIS_Debug\log2_tab.o ORBIS_Debug\rematrix.o ORBIS_Debug\resample.o "ORBIS_Debug\swresample-test.o" ORBIS_Debug\swresample.o ORBIS_Debug\swresample_x86.o ..\..\ffmpeg_asm\libswresample\x86\audio_convert.o ..\..\ffmpeg_asm\libswresample\x86\rematrix_x86.o E:\dev\otg_nomad\trunk\VE\ORBIS_Debug\libavutil_prx_stub_weak.a -Wl,--end-group
+         libswresample_prx.vcxproj -> E:\dev\otg_nomad\trunk\VE\ORBIS_Debug\libswresample_prx.prx
+       FinalizeBuildStatus:
+         Deleting file "ORBIS_Debug\libswresample_prx.unsuccessfulbuild".
+         Touching "ORBIS_Debug\libswresample_prx.lastbuildstate".
+     1>Done Building Project "E:\dev\otg_nomad\trunk\ffmpeg\libswresample\libswresample_prx\libswresample_prx.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.68

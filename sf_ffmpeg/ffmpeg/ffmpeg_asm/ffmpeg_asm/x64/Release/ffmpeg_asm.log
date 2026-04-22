@@ -1,0 +1,126 @@
+﻿Build started 3/27/2014 11:21:33 AM.
+     1>Project "E:\dev\otg_nomad\trunk\ffmpeg\ffmpeg_asm\ffmpeg_asm\ffmpeg_asm.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Release\ffmpeg_asm.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       _YASM:
+         Assembling h264_deblock_att.s
+         Assembling ac3dsp.asm
+         Assembling dct32.asm
+         Assembling diracdsp_yasm.asm
+         Assembling dsputil.asm
+         Assembling dsputilenc.asm
+         Assembling dwt_yasm.asm
+         Assembling fft.asm
+         Assembling fmtconvert.asm
+         Assembling fpel.asm
+         Assembling h263_loopfilter.asm
+         Assembling h264_chromamc.asm
+         Assembling h264_chromamc_10bit.asm
+         Assembling h264_deblock.asm
+         Assembling h264_deblock_10bit.asm
+         Assembling h264_idct.asm
+         Assembling h264_idct_10bit.asm
+         Assembling h264_intrapred.asm
+         Assembling h264_intrapred_10bit.asm
+         Assembling h264_qpel_10bit.asm
+         Assembling h264_qpel_8bit.asm
+         Assembling h264_weight.asm
+         Assembling h264_weight_10bit.asm
+         Assembling hpeldsp.asm
+         Assembling imdct36.asm
+         Assembling mpeg4qpel.asm
+         Assembling pngdsp.asm
+         Assembling proresdsp.asm
+         Assembling qpel.asm
+         Assembling rv34dsp.asm
+         Assembling rv40dsp.asm
+         Assembling sbrdsp.asm
+         Assembling v210.asm
+         Assembling vc1dsp.asm
+         Assembling videodsp.asm
+         Assembling vorbisdsp.asm
+         Assembling vp3dsp.asm
+         Assembling vp56dsp.asm
+         Assembling vp8dsp.asm
+         Assembling af_volume.asm
+         Assembling vf_hqdn3d.asm
+         Assembling vf_yadif.asm
+         Assembling yadif-10.asm
+         Assembling yadif-16.asm
+         Assembling audio_convert.asm
+         Assembling audio_mix.asm
+         Assembling dither.asm
+         Assembling util.asm
+         Assembling cpuid.asm
+         Assembling emms.asm
+         Assembling float_dsp.asm
+         Assembling rematrix.asm
+         Assembling input.asm
+         Assembling output.asm
+         cmd.exe /C "C:\Users\mvaden\AppData\Local\Temp\tmp1d32ec3891964cd98e250c35a8d5ef6f.cmd"
+         "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\"vsyasm.exe -Xvc -f x64 -i "E:\dev\otg_nomad\trunk\ffmpeg\\" -o "x64\Release\\" -P "E:\dev\otg_nomad\trunk\ffmpeg\config.asm" -rnasm -pnasm   ..\..\libavcodec\x86\h264_deblock_att.s  ..\..\libavcodec\x86\ac3dsp.asm  ..\..\libavcodec\x86\dct32.asm  ..\..\libavcodec\x86\diracdsp_yasm.asm  ..\..\libavcodec\x86\dsputil.asm  ..\..\libavcodec\x86\dsputilenc.asm  ..\..\libavcodec\x86\dwt_yasm.asm  ..\..\libavcodec\x86\fft.asm  ..\..\libavcodec\x86\fmtconvert.asm  ..\..\libavcodec\x86\fpel.asm  ..\..\libavcodec\x86\h263_loopfilter.asm  ..\..\libavcodec\x86\h264_chromamc.asm  ..\..\libavcodec\x86\h264_chromamc_10bit.asm  ..\..\libavcodec\x86\h264_deblock.asm  ..\..\libavcodec\x86\h264_deblock_10bit.asm  ..\..\libavcodec\x86\h264_idct.asm  ..\..\libavcodec\x86\h264_idct_10bit.asm  ..\..\libavcodec\x86\h264_intrapred.asm  ..\..\libavcodec\x86\h264_intrapred_10bit.asm  ..\..\libavcodec\x86\h264_qpel_10bit.asm  ..\..\libavcodec\x86\h264_qpel_8bit.asm  ..\..\libavcodec\x86\h264_weight.asm  ..\..\libavcodec\x86\h264_weight_10bit.asm  ..\..\libavcodec\x86\hpeldsp.asm  ..\..\libavcodec\x86\imdct36.asm  ..\..\libavcodec\x86\mpeg4qpel.asm  ..\..\libavcodec\x86\pngdsp.asm  ..\..\libavcodec\x86\proresdsp.asm  ..\..\libavcodec\x86\qpel.asm  ..\..\libavcodec\x86\rv34dsp.asm  ..\..\libavcodec\x86\rv40dsp.asm  ..\..\libavcodec\x86\sbrdsp.asm  ..\..\libavcodec\x86\v210.asm  ..\..\libavcodec\x86\vc1dsp.asm  ..\..\libavcodec\x86\videodsp.asm  ..\..\libavcodec\x86\vorbisdsp.asm  ..\..\libavcodec\x86\vp3dsp.asm  ..\..\libavcodec\x86\vp56dsp.asm  ..\..\libavcodec\x86\vp8dsp.asm  ..\..\libavfilter\x86\af_volume.asm  ..\..\libavfilter\x86\vf_hqdn3d.asm  ..\..\libavfilter\x86\vf_yadif.asm  "..\..\libavfilter\x86\yadif-10.asm"  "..\..\libavfilter\x86\yadif-16.asm"  ..\..\libavresample\x86\audio_convert.asm  ..\..\libavresample\x86\audio_mix.asm  ..\..\libavresample\x86\dither.asm  ..\..\libavresample\x86\util.asm  ..\..\libavutil\x86\cpuid.asm  ..\..\libavutil\x86\emms.asm  ..\..\libavutil\x86\float_dsp.asm  ..\..\libswresample\x86\audio_convert.asm  ..\..\libswresample\x86\rematrix.asm  ..\..\libswscale\x86\input.asm  ..\..\libswscale\x86\output.asm
+     1>..\..\libavcodec\x86\fft.asm(54): warning : section flags ignored on section redeclaration
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\Lib.exe /OUT:"E:\dev\otg_nomad\trunk\ffmpeg\ffmpeg_asm\x64\Release\ffmpeg_asm.lib" /NOLOGO /LTCG x64\Release\h264_deblock_att.obj
+         x64\Release\ac3dsp.obj
+         x64\Release\dct32.obj
+         x64\Release\diracdsp_yasm.obj
+         x64\Release\dsputil.obj
+         x64\Release\dsputilenc.obj
+         x64\Release\dwt_yasm.obj
+         x64\Release\fft.obj
+         x64\Release\fmtconvert.obj
+         x64\Release\fpel.obj
+         x64\Release\h263_loopfilter.obj
+         x64\Release\h264_chromamc.obj
+         x64\Release\h264_chromamc_10bit.obj
+         x64\Release\h264_deblock.obj
+         x64\Release\h264_deblock_10bit.obj
+         x64\Release\h264_idct.obj
+         x64\Release\h264_idct_10bit.obj
+         x64\Release\h264_intrapred.obj
+         x64\Release\h264_intrapred_10bit.obj
+         x64\Release\h264_qpel_10bit.obj
+         x64\Release\h264_qpel_8bit.obj
+         x64\Release\h264_weight.obj
+         x64\Release\h264_weight_10bit.obj
+         x64\Release\hpeldsp.obj
+         x64\Release\imdct36.obj
+         x64\Release\mpeg4qpel.obj
+         x64\Release\pngdsp.obj
+         x64\Release\proresdsp.obj
+         x64\Release\qpel.obj
+         x64\Release\rv34dsp.obj
+         x64\Release\rv40dsp.obj
+         x64\Release\sbrdsp.obj
+         x64\Release\v210.obj
+         x64\Release\vc1dsp.obj
+         x64\Release\videodsp.obj
+         x64\Release\vorbisdsp.obj
+         x64\Release\vp3dsp.obj
+         x64\Release\vp56dsp.obj
+         x64\Release\vp8dsp.obj
+         x64\Release\af_volume.obj
+         x64\Release\vf_hqdn3d.obj
+         x64\Release\vf_yadif.obj
+         "x64\Release\yadif-10.obj"
+         "x64\Release\yadif-16.obj"
+         x64\Release\audio_convert.obj
+         x64\Release\audio_mix.obj
+         x64\Release\dither.obj
+         x64\Release\util.obj
+         x64\Release\cpuid.obj
+         x64\Release\emms.obj
+         x64\Release\float_dsp.obj
+         x64\Release\rematrix.obj
+         x64\Release\input.obj
+         x64\Release\output.obj
+         ffmpeg_asm.vcxproj -> E:\dev\otg_nomad\trunk\ffmpeg\ffmpeg_asm\x64\Release\ffmpeg_asm.lib
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\ffmpeg_asm.unsuccessfulbuild".
+         Touching "x64\Release\ffmpeg_asm.lastbuildstate".
+     1>Done Building Project "E:\dev\otg_nomad\trunk\ffmpeg\ffmpeg_asm\ffmpeg_asm\ffmpeg_asm.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.55

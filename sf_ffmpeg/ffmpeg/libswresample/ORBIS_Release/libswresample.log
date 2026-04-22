@@ -1,0 +1,41 @@
+﻿Build started 4/21/2014 8:16:51 PM.
+     1>Project "E:\dev\otg_nomad\trunk\ffmpeg\libswresample\libswresample.vcxproj" on node 4 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "ORBIS_Release\libswresample.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         audioconvert.c
+         orbis-clang.exe -o ORBIS_Release\audioconvert.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\audioconvert.c
+         dither.c
+         orbis-clang.exe -o ORBIS_Release\dither.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\dither.c
+         log2_tab.c
+         orbis-clang.exe -o ORBIS_Release\log2_tab.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\log2_tab.c
+         rematrix.c
+         orbis-clang.exe -o ORBIS_Release\rematrix.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\rematrix.c
+         resample.c
+         orbis-clang.exe -o ORBIS_Release\resample.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\resample.c
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\resample.c(138,15): warning : 8 enumeration values not handled in switch: 'AV_SAMPLE_FMT_NONE', 'AV_SAMPLE_FMT_U8', 'AV_SAMPLE_FMT_S16'... [-Wswitch]
+         swresample-test.c
+         orbis-clang.exe -o ORBIS_Release\swresample-test.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample-test.c
+         swresample.c
+         orbis-clang.exe -o ORBIS_Release\swresample.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -DNDEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -Wall -fno-caret-diagnostics -O2 E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c
+     1>E:\dev\otg_nomad\trunk\ffmpeg\libswresample\swresample.c(721,23): warning : 8 enumeration values not handled in switch: 'AV_SAMPLE_FMT_NONE', 'AV_SAMPLE_FMT_U8', 'AV_SAMPLE_FMT_S16'... [-Wswitch]
+       Lib:
+         C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\bin\orbis-snarl.exe create E:\dev\otg_nomad\trunk\VE\ORBIS_Release\libswresample.a
+         addmod ORBIS_Release\audioconvert.o
+         addmod ORBIS_Release\dither.o
+         addmod ORBIS_Release\log2_tab.o
+         addmod ORBIS_Release\rematrix.o
+         addmod ORBIS_Release\resample.o
+         addmod ORBIS_Release\swresample-test.o
+         addmod ORBIS_Release\swresample.o
+         save
+         end
+         libswresample.vcxproj -> E:\dev\otg_nomad\trunk\VE\ORBIS_Release\libswresample.a
+       FinalizeBuildStatus:
+         Deleting file "ORBIS_Release\libswresample.unsuccessfulbuild".
+         Touching "ORBIS_Release\libswresample.lastbuildstate".
+     1>Done Building Project "E:\dev\otg_nomad\trunk\ffmpeg\libswresample\libswresample.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.33

@@ -1,0 +1,68 @@
+﻿Build started 3/26/2014 9:14:12 PM.
+     1>Project "E:\dev\otg_nomad\trunk\ffmpeg\ffmpeg_asm\ffmpeg_asm\ffmpeg_asm.vcxproj" on node 7 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\ffmpeg_asm.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       _YASM:
+         Assembling h264_deblock_att.s
+         Assembling ac3dsp.asm
+         Assembling dct32.asm
+         Assembling diracdsp_yasm.asm
+         Assembling dsputil.asm
+         Assembling dsputilenc.asm
+         Assembling dwt_yasm.asm
+         Assembling fft.asm
+         Assembling fmtconvert.asm
+         Assembling fpel.asm
+         Assembling h263_loopfilter.asm
+         Assembling h264_chromamc.asm
+         Assembling h264_chromamc_10bit.asm
+         Assembling h264_deblock.asm
+         Assembling h264_deblock_10bit.asm
+         Assembling h264_idct.asm
+         Assembling h264_idct_10bit.asm
+         Assembling h264_intrapred.asm
+         Assembling h264_intrapred_10bit.asm
+         Assembling h264_qpel_10bit.asm
+         Assembling h264_qpel_8bit.asm
+         Assembling h264_weight.asm
+         Assembling h264_weight_10bit.asm
+         Assembling hpeldsp.asm
+         Assembling imdct36.asm
+         Assembling mpeg4qpel.asm
+         Assembling pngdsp.asm
+         Assembling proresdsp.asm
+         Assembling qpel.asm
+         Assembling rv34dsp.asm
+         Assembling rv40dsp.asm
+         Assembling sbrdsp.asm
+         Assembling v210.asm
+         Assembling vc1dsp.asm
+         Assembling videodsp.asm
+         Assembling vorbisdsp.asm
+         Assembling vp3dsp.asm
+         Assembling vp56dsp.asm
+         Assembling vp8dsp.asm
+         Assembling af_volume.asm
+         Assembling vf_hqdn3d.asm
+         Assembling vf_yadif.asm
+         Assembling yadif-10.asm
+         Assembling yadif-16.asm
+         Assembling audio_convert.asm
+         Assembling audio_mix.asm
+         Assembling dither.asm
+         Assembling util.asm
+         Assembling cpuid.asm
+         Assembling emms.asm
+         Assembling float_dsp.asm
+         Assembling rematrix.asm
+         Assembling input.asm
+         Assembling output.asm
+         cmd.exe /C "C:\Users\mvaden\AppData\Local\Temp\tmp334d6174395341f8ba811c21a4946b60.cmd"
+         "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\"vsyasm.exe -Xvc -f x64 -o "x64\Debug\\" -rnasm -pnasm   ..\..\libavcodec\x86\h264_deblock_att.s  ..\..\libavcodec\x86\ac3dsp.asm  ..\..\libavcodec\x86\dct32.asm  ..\..\libavcodec\x86\diracdsp_yasm.asm  ..\..\libavcodec\x86\dsputil.asm  ..\..\libavcodec\x86\dsputilenc.asm  ..\..\libavcodec\x86\dwt_yasm.asm  ..\..\libavcodec\x86\fft.asm  ..\..\libavcodec\x86\fmtconvert.asm  ..\..\libavcodec\x86\fpel.asm  ..\..\libavcodec\x86\h263_loopfilter.asm  ..\..\libavcodec\x86\h264_chromamc.asm  ..\..\libavcodec\x86\h264_chromamc_10bit.asm  ..\..\libavcodec\x86\h264_deblock.asm  ..\..\libavcodec\x86\h264_deblock_10bit.asm  ..\..\libavcodec\x86\h264_idct.asm  ..\..\libavcodec\x86\h264_idct_10bit.asm  ..\..\libavcodec\x86\h264_intrapred.asm  ..\..\libavcodec\x86\h264_qpel_10bit.asm  ..\..\libavcodec\x86\h264_qpel_8bit.asm  ..\..\libavcodec\x86\h264_weight.asm  ..\..\libavcodec\x86\h264_weight_10bit.asm  ..\..\libavcodec\x86\hpeldsp.asm  ..\..\libavcodec\x86\imdct36.asm  ..\..\libavcodec\x86\mpeg4qpel.asm  ..\..\libavcodec\x86\pngdsp.asm  ..\..\libavcodec\x86\proresdsp.asm  ..\..\libavcodec\x86\qpel.asm  ..\..\libavcodec\x86\rv34dsp.asm  ..\..\libavcodec\x86\rv40dsp.asm  ..\..\libavcodec\x86\sbrdsp.asm  ..\..\libavcodec\x86\v210.asm  ..\..\libavcodec\x86\vc1dsp.asm  ..\..\libavcodec\x86\videodsp.asm  ..\..\libavcodec\x86\vorbisdsp.asm  ..\..\libavcodec\x86\vp3dsp.asm  ..\..\libavcodec\x86\vp56dsp.asm  ..\..\libavcodec\x86\vp8dsp.asm  ..\..\libavfilter\x86\af_volume.asm  ..\..\libavfilter\x86\vf_hqdn3d.asm  ..\..\libavfilter\x86\vf_yadif.asm  "..\..\libavfilter\x86\yadif-10.asm"  "..\..\libavfilter\x86\yadif-16.asm"  ..\..\libavresample\x86\audio_convert.asm  ..\..\libavresample\x86\audio_mix.asm  ..\..\libavresample\x86\dither.asm  ..\..\libavresample\x86\util.asm  ..\..\libavutil\x86\cpuid.asm  ..\..\libavutil\x86\emms.asm  ..\..\libavutil\x86\float_dsp.asm  ..\..\libswresample\x86\audio_convert.asm  ..\..\libswresample\x86\rematrix.asm  ..\..\libswscale\x86\input.asm  ..\..\libswscale\x86\output.asm
+         vsyasm: FATAL: unable to open include file `libavutil/x86/x86util.asm'
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\BuildCustomizations\vsyasm.targets(45,5): error MSB3721: The command ""C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\"vsyasm.exe -Xvc -f x64 -o "x64\Debug\\" -rnasm -pnasm   ..\..\libavcodec\x86\h264_deblock_att.s  ..\..\libavcodec\x86\ac3dsp.asm  ..\..\libavcodec\x86\dct32.asm  ..\..\libavcodec\x86\diracdsp_yasm.asm  ..\..\libavcodec\x86\dsputil.asm  ..\..\libavcodec\x86\dsputilenc.asm  ..\..\libavcodec\x86\dwt_yasm.asm  ..\..\libavcodec\x86\fft.asm  ..\..\libavcodec\x86\fmtconvert.asm  ..\..\libavcodec\x86\fpel.asm  ..\..\libavcodec\x86\h263_loopfilter.asm  ..\..\libavcodec\x86\h264_chromamc.asm  ..\..\libavcodec\x86\h264_chromamc_10bit.asm  ..\..\libavcodec\x86\h264_deblock.asm  ..\..\libavcodec\x86\h264_deblock_10bit.asm  ..\..\libavcodec\x86\h264_idct.asm  ..\..\libavcodec\x86\h264_idct_10bit.asm  ..\..\libavcodec\x86\h264_intrapred.asm  ..\..\libavcodec\x86\h264_qpel_10bit.asm  ..\..\libavcodec\x86\h264_qpel_8bit.asm  ..\..\libavcodec\x86\h264_weight.asm  ..\..\libavcodec\x86\h264_weight_10bit.asm  ..\..\libavcodec\x86\hpeldsp.asm  ..\..\libavcodec\x86\imdct36.asm  ..\..\libavcodec\x86\mpeg4qpel.asm  ..\..\libavcodec\x86\pngdsp.asm  ..\..\libavcodec\x86\proresdsp.asm  ..\..\libavcodec\x86\qpel.asm  ..\..\libavcodec\x86\rv34dsp.asm  ..\..\libavcodec\x86\rv40dsp.asm  ..\..\libavcodec\x86\sbrdsp.asm  ..\..\libavcodec\x86\v210.asm  ..\..\libavcodec\x86\vc1dsp.asm  ..\..\libavcodec\x86\videodsp.asm  ..\..\libavcodec\x86\vorbisdsp.asm  ..\..\libavcodec\x86\vp3dsp.asm  ..\..\libavcodec\x86\vp56dsp.asm  ..\..\libavcodec\x86\vp8dsp.asm  ..\..\libavfilter\x86\af_volume.asm  ..\..\libavfilter\x86\vf_hqdn3d.asm  ..\..\libavfilter\x86\vf_yadif.asm  "..\..\libavfilter\x86\yadif-10.asm"  "..\..\libavfilter\x86\yadif-16.asm"  ..\..\libavresample\x86\audio_convert.asm  ..\..\libavresample\x86\audio_mix.asm  ..\..\libavresample\x86\dither.asm  ..\..\libavresample\x86\util.asm  ..\..\libavutil\x86\cpuid.asm  ..\..\libavutil\x86\emms.asm  ..\..\libavutil\x86\float_dsp.asm  ..\..\libswresample\x86\audio_convert.asm  ..\..\libswresample\x86\rematrix.asm  ..\..\libswscale\x86\input.asm  ..\..\libswscale\x86\output.asm" exited with code 1.
+     1>Done Building Project "E:\dev\otg_nomad\trunk\ffmpeg\ffmpeg_asm\ffmpeg_asm\ffmpeg_asm.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.75

@@ -1,0 +1,50 @@
+﻿Build started 4/22/2014 9:19:14 PM.
+     1>Project "E:\dev\otg_nomad\trunk\ffmpeg\libswscale\libswscale.vcxproj" on node 5 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "ORBIS_Debug\libswscale.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "ORBIS_Debug\libswscale.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         colorspace-test.c
+         orbis-clang.exe -o ORBIS_Debug\colorspace-test.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\colorspace-test.c
+         input.c
+         orbis-clang.exe -o ORBIS_Debug\input.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\input.c
+         options.c
+         orbis-clang.exe -o ORBIS_Debug\options.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\options.c
+         output.c
+         orbis-clang.exe -o ORBIS_Debug\output.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\output.c
+         rgb2rgb.c
+         orbis-clang.exe -o ORBIS_Debug\rgb2rgb.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\rgb2rgb.c
+         swscale-test.c
+         orbis-clang.exe -o ORBIS_Debug\swscale-test.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\swscale-test.c
+         swscale.c
+         orbis-clang.exe -o ORBIS_Debug\swscale.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\swscale.c
+         swscale_unscaled.c
+         orbis-clang.exe -o ORBIS_Debug\swscale_unscaled.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\swscale_unscaled.c
+         utils.c
+         orbis-clang.exe -o ORBIS_Debug\utils.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\utils.c
+         yuv2rgb.c
+         orbis-clang.exe -o ORBIS_Debug\yuv2rgb.o -c -MD -fdiagnostics-format=msvc -I..\ -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\lib\clang\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include" -I"C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\target\include_common" -D_DEBUG -DPIC -include config.h -include libavutil/internal.h -include sceKernelMacros.h -g -Wall -fno-caret-diagnostics -O0 -std=c99 -pthread -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -g -Wdeclaration-after-statement -Wall -Wno-parentheses -Wno-switch -Wno-format-zero-length -Wdisabled-optimization -Wpointer-arith -Wredundant-decls -Wno-pointer-sign -Wwrite-strings -Wundef -Wmissing-prototypes -Wno-pointer-to-int-cast -Wstrict-prototypes -O3 -fno-math-errno E:\dev\otg_nomad\trunk\ffmpeg\libswscale\yuv2rgb.c
+       Lib:
+         C:\Program Files (x86)\SCE\ORBIS SDKs\1.700_pre\host_tools\bin\orbis-snarl.exe create E:\dev\otg_nomad\trunk\VE\ORBIS_Debug\libswscale.a
+         addmod ORBIS_Debug\colorspace-test.o
+         addmod ORBIS_Debug\input.o
+         addmod ORBIS_Debug\options.o
+         addmod ORBIS_Debug\output.o
+         addmod ORBIS_Debug\rgb2rgb.o
+         addmod ORBIS_Debug\swscale-test.o
+         addmod ORBIS_Debug\swscale.o
+         addmod ORBIS_Debug\swscale_unscaled.o
+         addmod ORBIS_Debug\utils.o
+         addmod ORBIS_Debug\yuv2rgb.o
+         save
+         end
+         libswscale.vcxproj -> E:\dev\otg_nomad\trunk\VE\ORBIS_Debug\libswscale.a
+       FinalizeBuildStatus:
+         Deleting file "ORBIS_Debug\libswscale.unsuccessfulbuild".
+         Touching "ORBIS_Debug\libswscale.lastbuildstate".
+     1>Done Building Project "E:\dev\otg_nomad\trunk\ffmpeg\libswscale\libswscale.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.48

@@ -1,0 +1,2063 @@
+Disassembly of section .text:
+
+fft8_avx:
+0x00000000: C5 FC 28 07             vmovaps  ymm0,ymmword ptr [rdi]
+0x00000004: C5 FC 28 4F 20          vmovaps  ymm1,ymmword ptr [rdi+20h]
+0x00000009: C5 FC 5C E1             vsubps   ymm4,ymm0,ymm1
+0x0000000D: C5 FC 58 D1             vaddps   ymm2,ymm0,ymm1
+0x00000011: C5 DC 59 0C 25 00 00    vmulps   ymm1,ymm4,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000018: 00 00 
+                       R_X86_64_32 .rodata+0xE0
+0x0000001A: C4 E2 75 0C 0C 25 00    vpermilps ymm1,ymm1,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000021: 00 00 00 
+                       R_X86_64_32 .rodata+0xA0
+0x00000024: C4 E3 75 0C C2 33       vblendps ymm0,ymm1,ymm2,33h
+0x0000002A: C5 EC C6 E1 4E          vshufps  ymm4,ymm2,ymm1,4Eh
+0x0000002F: C5 DC 5C D8             vsubps   ymm3,ymm4,ymm0
+0x00000033: C5 DC 58 C0             vaddps   ymm0,ymm4,ymm0
+0x00000037: C4 E2 7D 0C 04 25 00    vpermilps ymm0,ymm0,ymmword ptr [fft8_avx (0000000000000000h)]
+0x0000003E: 00 00 00 
+                       R_X86_64_32 .rodata+0xC0
+0x00000041: C5 E4 C6 E0 BB          vshufps  ymm4,ymm3,ymm0,0BBh
+0x00000046: C5 E4 C6 D0 EE          vshufps  ymm2,ymm3,ymm0,0EEh
+0x0000004B: C4 E3 6D 06 D4 13       vperm2f128 ymm2,ymm2,ymm4,13h
+0x00000051: C5 E4 57 1C 25 00 00    vxorps   ymm3,ymm3,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000058: 00 00 
+                       R_X86_64_32 .rodata+0x100
+0x0000005A: C5 FC C6 CB DD          vshufps  ymm1,ymm0,ymm3,0DDh
+0x0000005F: C5 FC C6 C3 88          vshufps  ymm0,ymm0,ymm3,88h
+0x00000064: C4 E3 75 06 D8 02       vperm2f128 ymm3,ymm1,ymm0,2
+0x0000006A: C4 E3 7D 06 C1 13       vperm2f128 ymm0,ymm0,ymm1,13h
+0x00000070: C5 FC 5C E2             vsubps   ymm4,ymm0,ymm2
+0x00000074: C4 E3 5D 0C C0 55       vblendps ymm0,ymm4,ymm0,55h
+0x0000007A: C5 E4 5C C8             vsubps   ymm1,ymm3,ymm0
+0x0000007E: C5 E4 58 C0             vaddps   ymm0,ymm3,ymm0
+0x00000082: C5 FC 29 07             vmovaps  ymmword ptr [rdi],ymm0
+0x00000086: C5 FC 29 4F 20          vmovaps  ymmword ptr [rdi+20h],ymm1
+0x0000008B: C3                      ret      
+0x0000008C: 0F 1F 40 00             nop      dword ptr [rax+0]
+
+fft16_avx:
+0x00000090: C5 FC 28 57 40          vmovaps  ymm2,ymmword ptr [rdi+40h]
+0x00000095: C5 FC 28 5F 60          vmovaps  ymm3,ymmword ptr [rdi+60h]
+0x0000009A: C5 EC 5C FB             vsubps   ymm7,ymm2,ymm3
+0x0000009E: C5 EC 58 D3             vaddps   ymm2,ymm2,ymm3
+0x000000A2: C5 C4 57 3C 25 00 00    vxorps   ymm7,ymm7,ymmword ptr [fft8_avx (0000000000000000h)]
+0x000000A9: 00 00 
+                       R_X86_64_32 .rodata+0x80
+0x000000AB: C5 EC C6 DF BE          vshufps  ymm3,ymm2,ymm7,0BEh
+0x000000B0: C5 EC C6 D7 44          vshufps  ymm2,ymm2,ymm7,44h
+0x000000B5: C5 EC 5C FB             vsubps   ymm7,ymm2,ymm3
+0x000000B9: C5 EC 58 D3             vaddps   ymm2,ymm2,ymm3
+0x000000BD: C5 EC C6 DF DD          vshufps  ymm3,ymm2,ymm7,0DDh
+0x000000C2: C5 EC C6 D7 88          vshufps  ymm2,ymm2,ymm7,88h
+0x000000C7: C5 FC 28 07             vmovaps  ymm0,ymmword ptr [rdi]
+0x000000CB: C5 FC 28 4F 20          vmovaps  ymm1,ymmword ptr [rdi+20h]
+0x000000D0: C5 FC 5C F9             vsubps   ymm7,ymm0,ymm1
+0x000000D4: C5 FC 58 E1             vaddps   ymm4,ymm0,ymm1
+0x000000D8: C5 C4 59 0C 25 00 00    vmulps   ymm1,ymm7,ymmword ptr [fft8_avx (0000000000000000h)]
+0x000000DF: 00 00 
+                       R_X86_64_32 .rodata+0xE0
+0x000000E1: C4 E2 75 0C 0C 25 00    vpermilps ymm1,ymm1,ymmword ptr [fft8_avx (0000000000000000h)]
+0x000000E8: 00 00 00 
+                       R_X86_64_32 .rodata+0xA0
+0x000000EB: C4 E3 75 0C C4 33       vblendps ymm0,ymm1,ymm4,33h
+0x000000F1: C5 DC C6 F9 4E          vshufps  ymm7,ymm4,ymm1,4Eh
+0x000000F6: C5 C4 5C E8             vsubps   ymm5,ymm7,ymm0
+0x000000FA: C5 C4 58 C0             vaddps   ymm0,ymm7,ymm0
+0x000000FE: C4 E2 7D 0C 04 25 00    vpermilps ymm0,ymm0,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000105: 00 00 00 
+                       R_X86_64_32 .rodata+0xC0
+0x00000108: C5 D4 C6 F8 BB          vshufps  ymm7,ymm5,ymm0,0BBh
+0x0000010D: C5 D4 C6 E0 EE          vshufps  ymm4,ymm5,ymm0,0EEh
+0x00000112: C4 E3 5D 06 E7 13       vperm2f128 ymm4,ymm4,ymm7,13h
+0x00000118: C5 D4 57 2C 25 00 00    vxorps   ymm5,ymm5,ymmword ptr [fft8_avx (0000000000000000h)]
+0x0000011F: 00 00 
+                       R_X86_64_32 .rodata+0x100
+0x00000121: C5 FC C6 CD DD          vshufps  ymm1,ymm0,ymm5,0DDh
+0x00000126: C5 FC C6 C5 88          vshufps  ymm0,ymm0,ymm5,88h
+0x0000012B: C4 E3 75 06 E8 02       vperm2f128 ymm5,ymm1,ymm0,2
+0x00000131: C4 E3 7D 06 C1 13       vperm2f128 ymm0,ymm0,ymm1,13h
+0x00000137: C5 FC 5C FC             vsubps   ymm7,ymm0,ymm4
+0x0000013B: C4 E3 45 0C C0 55       vblendps ymm0,ymm7,ymm0,55h
+0x00000141: C5 D4 5C C8             vsubps   ymm1,ymm5,ymm0
+0x00000145: C5 D4 58 C0             vaddps   ymm0,ymm5,ymm0
+0x00000149: C5 FC 28 24 25 00 00    vmovaps  ymm4,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000150: 00 00 
+                       R_X86_64_32 .rodata
+0x00000152: C5 FC 28 2C 25 00 00    vmovaps  ymm5,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000159: 00 00 
+                       R_X86_64_32 .rodata+0x20
+0x0000015B: C5 EC 59 F4             vmulps   ymm6,ymm2,ymm4
+0x0000015F: C5 E4 59 FD             vmulps   ymm7,ymm3,ymm5
+0x00000163: C5 C4 58 FE             vaddps   ymm7,ymm7,ymm6
+0x00000167: C5 EC 59 D5             vmulps   ymm2,ymm2,ymm5
+0x0000016B: C5 E4 59 DC             vmulps   ymm3,ymm3,ymm4
+0x0000016F: C5 E4 5C DA             vsubps   ymm3,ymm3,ymm2
+0x00000173: C4 E3 45 0C D3 F0       vblendps ymm2,ymm7,ymm3,0F0h
+0x00000179: C4 E3 45 06 DB 21       vperm2f128 ymm3,ymm7,ymm3,21h
+0x0000017F: C5 EC 58 E3             vaddps   ymm4,ymm2,ymm3
+0x00000183: C5 E4 5C D2             vsubps   ymm2,ymm3,ymm2
+0x00000187: C4 E3 6D 06 D2 01       vperm2f128 ymm2,ymm2,ymm2,1
+0x0000018D: C5 F4 5C DA             vsubps   ymm3,ymm1,ymm2
+0x00000191: C5 F4 58 CA             vaddps   ymm1,ymm1,ymm2
+0x00000195: C5 FC 5C EC             vsubps   ymm5,ymm0,ymm4
+0x00000199: C5 FC 58 C4             vaddps   ymm0,ymm0,ymm4
+0x0000019D: C4 E3 7D 19 07 00       vextractf128 xmmword ptr [rdi],ymm0,0
+0x000001A3: C4 E3 7D 19 4F 10 00    vextractf128 xmmword ptr [rdi+10h],ymm1,0
+0x000001AA: C4 E3 7D 19 47 20 01    vextractf128 xmmword ptr [rdi+20h],ymm0,1
+0x000001B1: C4 E3 7D 19 4F 30 01    vextractf128 xmmword ptr [rdi+30h],ymm1,1
+0x000001B8: C4 E3 7D 19 6F 40 00    vextractf128 xmmword ptr [rdi+40h],ymm5,0
+0x000001BF: C4 E3 7D 19 5F 50 00    vextractf128 xmmword ptr [rdi+50h],ymm3,0
+0x000001C6: C4 E3 7D 19 6F 60 01    vextractf128 xmmword ptr [rdi+60h],ymm5,1
+0x000001CD: C4 E3 7D 19 5F 70 01    vextractf128 xmmword ptr [rdi+70h],ymm3,1
+0x000001D4: C3                      ret      
+0x000001D5: 0F 1F 44 00 00          nop      dword ptr [rax+rax+0]
+0x000001DA: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+
+fft32_avx:
+0x000001E0: E8 AB FE FF FF          call     fft16_avx (0000000000000090h)
+0x000001E5: C5 FC 28 87 80 00 00    vmovaps  ymm0,ymmword ptr [rdi+80h]
+0x000001EC: 00 
+0x000001ED: C5 FC 28 8F A0 00 00    vmovaps  ymm1,ymmword ptr [rdi+0A0h]
+0x000001F4: 00 
+0x000001F5: C5 FC 5C E1             vsubps   ymm4,ymm0,ymm1
+0x000001F9: C5 FC 58 C1             vaddps   ymm0,ymm0,ymm1
+0x000001FD: C5 DC 57 24 25 00 00    vxorps   ymm4,ymm4,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000204: 00 00 
+                       R_X86_64_32 .rodata+0x80
+0x00000206: C5 FC C6 CC BE          vshufps  ymm1,ymm0,ymm4,0BEh
+0x0000020B: C5 FC C6 C4 44          vshufps  ymm0,ymm0,ymm4,44h
+0x00000210: C5 FC 5C E1             vsubps   ymm4,ymm0,ymm1
+0x00000214: C5 FC 58 C1             vaddps   ymm0,ymm0,ymm1
+0x00000218: C5 FC C6 CC DD          vshufps  ymm1,ymm0,ymm4,0DDh
+0x0000021D: C5 FC C6 C4 88          vshufps  ymm0,ymm0,ymm4,88h
+0x00000222: C5 FC 28 97 C0 00 00    vmovaps  ymm2,ymmword ptr [rdi+0C0h]
+0x00000229: 00 
+0x0000022A: C5 FC 28 9F E0 00 00    vmovaps  ymm3,ymmword ptr [rdi+0E0h]
+0x00000231: 00 
+0x00000232: C5 EC 58 F3             vaddps   ymm6,ymm2,ymm3
+0x00000236: C5 EC 5C D3             vsubps   ymm2,ymm2,ymm3
+0x0000023A: C5 EC C6 DA B1          vshufps  ymm3,ymm2,ymm2,0B1h
+0x0000023F: C5 EC 59 14 25 00 00    vmulps   ymm2,ymm2,ymmword ptr [fft8_avx (0000000000000000h)]
+0x00000246: 00 00 
+                       R_X86_64_32 .rodata+0x60
+0x00000248: C5 E4 59 1C 25 00 00    vmulps   ymm3,ymm3,ymmword ptr [fft8_avx (0000000000000000h)]
+0x0000024F: 00 00 
+                       R_X86_64_32 .rodata+0x40
+0x00000251: C5 EC 58 D3             vaddps   ymm2,ymm2,ymm3
+0x00000255: C5 CC C6 DA 9C          vshufps  ymm3,ymm6,ymm2,9Ch
+0x0000025A: C5 CC C6 F2 36          vshufps  ymm6,ymm6,ymm2,36h
+0x0000025F: C5 CC 5C D3             vsubps   ymm2,ymm6,ymm3
+0x00000263: C5 CC 58 F3             vaddps   ymm6,ymm6,ymm3
+0x00000267: C5 CC C6 E2 8D          vshufps  ymm4,ymm6,ymm2,8Dh
+0x0000026C: C5 CC C6 F2 D8          vshufps  ymm6,ymm6,ymm2,0D8h
+0x00000271: C5 FC 5C D6             vsubps   ymm2,ymm0,ymm6
+0x00000275: C5 FC 58 C6             vaddps   ymm0,ymm0,ymm6
+0x00000279: C5 F4 5C DC             vsubps   ymm3,ymm1,ymm4
+0x0000027D: C5 F4 58 CC             vaddps   ymm1,ymm1,ymm4
+0x00000281: C4 E3 7D 06 E2 20       vperm2f128 ymm4,ymm0,ymm2,20h
+0x00000287: C4 E3 75 06 EB 20       vperm2f128 ymm5,ymm1,ymm3,20h
+0x0000028D: C4 E3 7D 06 F2 31       vperm2f128 ymm6,ymm0,ymm2,31h
+0x00000293: C4 E3 75 06 FB 31       vperm2f128 ymm7,ymm1,ymm3,31h
+0x00000299: C5 FC 28 04 25 00 00    vmovaps  ymm0,ymmword ptr [fft8_avx (0000000000000000h)]
+0x000002A0: 00 00 
+                       R_X86_64_32 ff_cos_32
+0x000002A2: C5 FC 28 0C 25 00 00    vmovaps  ymm1,ymmword ptr [fft8_avx (0000000000000000h)]
+0x000002A9: 00 00 
+                       R_X86_64_32 ff_cos_32
+0x000002AB: C5 DC 59 D0             vmulps   ymm2,ymm4,ymm0
+0x000002AF: C5 D4 59 D9             vmulps   ymm3,ymm5,ymm1
+0x000002B3: C5 DC 59 E1             vmulps   ymm4,ymm4,ymm1
+0x000002B7: C5 D4 59 E8             vmulps   ymm5,ymm5,ymm0
+0x000002BB: C5 EC 58 D3             vaddps   ymm2,ymm2,ymm3
+0x000002BF: C5 F4 59 DF             vmulps   ymm3,ymm1,ymm7
+0x000002C3: C5 D4 5C EC             vsubps   ymm5,ymm5,ymm4
+0x000002C7: C5 F4 59 CE             vmulps   ymm1,ymm1,ymm6
+0x000002CB: C5 FC 59 E6             vmulps   ymm4,ymm0,ymm6
+0x000002CF: C5 FC 59 C7             vmulps   ymm0,ymm0,ymm7
+0x000002D3: C5 DC 5C E3             vsubps   ymm4,ymm4,ymm3
+0x000002D7: C5 FC 28 1F             vmovaps  ymm3,ymmword ptr [rdi]
+0x000002DB: C5 FC 58 C1             vaddps   ymm0,ymm0,ymm1
+0x000002DF: C5 DC 5C CA             vsubps   ymm1,ymm4,ymm2
+0x000002E3: C5 DC 58 E2             vaddps   ymm4,ymm4,ymm2
+0x000002E7: C5 E4 5C DC             vsubps   ymm3,ymm3,ymm4
+0x000002EB: C5 DC 58 27             vaddps   ymm4,ymm4,ymmword ptr [rdi]
+0x000002EF: C5 FC 28 77 40          vmovaps  ymm6,ymmword ptr [rdi+40h]
+0x000002F4: C5 FC 29 9F 80 00 00    vmovaps  ymmword ptr [rdi+80h],ymm3
+0x000002FB: 00 
+0x000002FC: C5 FC 29 27             vmovaps  ymmword ptr [rdi],ymm4
+0x00000300: C5 D4 5C D8             vsubps   ymm3,ymm5,ymm0
+0x00000304: C5 CC 5C E3             vsubps   ymm4,ymm6,ymm3
+0x00000308: C5 E4 58 DE             vaddps   ymm3,ymm3,ymm6
+0x0000030C: C5 FC 29 A7 C0 00 00    vmovaps  ymmword ptr [rdi+0C0h],ymm4
+0x00000313: 00 
+0x00000314: C5 FC 29 5F 40          vmovaps  ymmword ptr [rdi+40h],ymm3
+0x00000319: C5 FC 28 57 60          vmovaps  ymm2,ymmword ptr [rdi+60h]
+0x0000031E: C5 D4 58 D8             vaddps   ymm3,ymm5,ymm0
+0x00000322: C5 EC 5C D1             vsubps   ymm2,ymm2,ymm1
+0x00000326: C5 FC 28 7F 20          vmovaps  ymm7,ymmword ptr [rdi+20h]
+0x0000032B: C5 F4 58 4F 60          vaddps   ymm1,ymm1,ymmword ptr [rdi+60h]
+0x00000330: C5 FC 29 97 E0 00 00    vmovaps  ymmword ptr [rdi+0E0h],ymm2
+0x00000337: 00 
+0x00000338: C5 FC 29 4F 60          vmovaps  ymmword ptr [rdi+60h],ymm1
+0x0000033D: C5 C4 5C E3             vsubps   ymm4,ymm7,ymm3
+0x00000341: C5 E4 58 DF             vaddps   ymm3,ymm3,ymm7
+0x00000345: C5 FC 29 A7 A0 00 00    vmovaps  ymmword ptr [rdi+0A0h],ymm4
+0x0000034C: 00 
+0x0000034D: C5 FC 29 5F 20          vmovaps  ymmword ptr [rdi+20h],ymm3
+0x00000352: C3                      ret      
+
+fft32_interleave_avx:
+0x00000353: E8 88 FE FF FF          call     fft32_avx (00000000000001E0h)
+0x00000358: BA 20 00 00 00          mov      edx,20h
+
+fft32_interleave_avx.deint_loop:
+0x0000035D: C5 FC 28 17             vmovaps  ymm2,ymmword ptr [rdi]
+0x00000361: C5 FC 28 5F 20          vmovaps  ymm3,ymmword ptr [rdi+20h]
+0x00000366: C5 EC 14 C3             vunpcklps ymm0,ymm2,ymm3
+0x0000036A: C5 EC 15 CB             vunpckhps ymm1,ymm2,ymm3
+0x0000036E: C4 E3 7D 19 07 00       vextractf128 xmmword ptr [rdi],ymm0,0
+0x00000374: C4 E3 7D 19 4F 10 00    vextractf128 xmmword ptr [rdi+10h],ymm1,0
+0x0000037B: C4 E3 7D 19 47 20 01    vextractf128 xmmword ptr [rdi+20h],ymm0,1
+0x00000382: C4 E3 7D 19 4F 30 01    vextractf128 xmmword ptr [rdi+30h],ymm1,1
+0x00000389: 48 83 C7 40             add      rdi,40h
+0x0000038D: 83 EA 08                sub      edx,8
+0x00000390: 7F CB                   jg       fft32_interleave_avx.deint_loop (000000000000035Dh)
+0x00000392: C3                      ret      
+0x00000393: 66 66 66 66 2E 0F 1F    nop      word ptr cs:[rax+rax+0]
+0x0000039A: 84 00 00 00 00 00 
+
+fft4_sse:
+0x000003A0: 0F 28 07                movaps   xmm0,xmmword ptr [rdi]
+0x000003A3: 0F 28 4F 10             movaps   xmm1,xmmword ptr [rdi+10h]
+0x000003A7: 0F 28 D0                movaps   xmm2,xmm0
+0x000003AA: 0F 5C D1                subps    xmm2,xmm1
+0x000003AD: 0F 58 C1                addps    xmm0,xmm1
+0x000003B0: 0F 57 14 25 00 00 00    xorps    xmm2,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000003B7: 00 
+                       R_X86_64_32 .rodata+0x80
+0x000003B8: 0F 28 C8                movaps   xmm1,xmm0
+0x000003BB: 0F C6 CA BE             shufps   xmm1,xmm2,0BEh
+0x000003BF: 0F C6 C2 44             shufps   xmm0,xmm2,44h
+0x000003C3: 0F 28 D0                movaps   xmm2,xmm0
+0x000003C6: 0F 5C D1                subps    xmm2,xmm1
+0x000003C9: 0F 58 C1                addps    xmm0,xmm1
+0x000003CC: 0F 28 C8                movaps   xmm1,xmm0
+0x000003CF: 0F C6 CA DD             shufps   xmm1,xmm2,0DDh
+0x000003D3: 0F C6 C2 88             shufps   xmm0,xmm2,88h
+0x000003D7: 0F 29 07                movaps   xmmword ptr [rdi],xmm0
+0x000003DA: 0F 29 4F 10             movaps   xmmword ptr [rdi+10h],xmm1
+0x000003DE: C3                      ret      
+0x000003DF: 90                      nop      
+
+fft8_sse:
+0x000003E0: 0F 28 07                movaps   xmm0,xmmword ptr [rdi]
+0x000003E3: 0F 28 4F 10             movaps   xmm1,xmmword ptr [rdi+10h]
+0x000003E7: 0F 28 D0                movaps   xmm2,xmm0
+0x000003EA: 0F 5C D1                subps    xmm2,xmm1
+0x000003ED: 0F 58 C1                addps    xmm0,xmm1
+0x000003F0: 0F 57 14 25 00 00 00    xorps    xmm2,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000003F7: 00 
+                       R_X86_64_32 .rodata+0x80
+0x000003F8: 0F 28 C8                movaps   xmm1,xmm0
+0x000003FB: 0F C6 CA BE             shufps   xmm1,xmm2,0BEh
+0x000003FF: 0F C6 C2 44             shufps   xmm0,xmm2,44h
+0x00000403: 0F 28 D0                movaps   xmm2,xmm0
+0x00000406: 0F 5C D1                subps    xmm2,xmm1
+0x00000409: 0F 58 C1                addps    xmm0,xmm1
+0x0000040C: 0F 28 C8                movaps   xmm1,xmm0
+0x0000040F: 0F C6 CA DD             shufps   xmm1,xmm2,0DDh
+0x00000413: 0F C6 C2 88             shufps   xmm0,xmm2,88h
+0x00000417: 0F 28 57 20             movaps   xmm2,xmmword ptr [rdi+20h]
+0x0000041B: 0F 28 5F 30             movaps   xmm3,xmmword ptr [rdi+30h]
+0x0000041F: 0F 28 EA                movaps   xmm5,xmm2
+0x00000422: 0F 58 EB                addps    xmm5,xmm3
+0x00000425: 0F 5C D3                subps    xmm2,xmm3
+0x00000428: 0F 28 DA                movaps   xmm3,xmm2
+0x0000042B: 0F C6 DA B1             shufps   xmm3,xmm2,0B1h
+0x0000042F: 0F 59 14 25 00 00 00    mulps    xmm2,xmmword ptr [fft8_avx (0000000000000000h)]
+0x00000436: 00 
+                       R_X86_64_32 .rodata+0x60
+0x00000437: 0F 59 1C 25 00 00 00    mulps    xmm3,xmmword ptr [fft8_avx (0000000000000000h)]
+0x0000043E: 00 
+                       R_X86_64_32 .rodata+0x40
+0x0000043F: 0F 58 D3                addps    xmm2,xmm3
+0x00000442: 0F 28 DD                movaps   xmm3,xmm5
+0x00000445: 0F C6 DA 9C             shufps   xmm3,xmm2,9Ch
+0x00000449: 0F C6 EA 36             shufps   xmm5,xmm2,36h
+0x0000044D: 0F 28 D5                movaps   xmm2,xmm5
+0x00000450: 0F 5C D3                subps    xmm2,xmm3
+0x00000453: 0F 58 EB                addps    xmm5,xmm3
+0x00000456: 0F 28 E5                movaps   xmm4,xmm5
+0x00000459: 0F C6 E2 8D             shufps   xmm4,xmm2,8Dh
+0x0000045D: 0F C6 EA D8             shufps   xmm5,xmm2,0D8h
+0x00000461: 0F 28 D0                movaps   xmm2,xmm0
+0x00000464: 0F 5C D5                subps    xmm2,xmm5
+0x00000467: 0F 58 C5                addps    xmm0,xmm5
+0x0000046A: 0F 28 D9                movaps   xmm3,xmm1
+0x0000046D: 0F 5C DC                subps    xmm3,xmm4
+0x00000470: 0F 58 CC                addps    xmm1,xmm4
+0x00000473: 0F 29 07                movaps   xmmword ptr [rdi],xmm0
+0x00000476: 0F 29 4F 10             movaps   xmmword ptr [rdi+10h],xmm1
+0x0000047A: 0F 29 57 20             movaps   xmmword ptr [rdi+20h],xmm2
+0x0000047E: 0F 29 5F 30             movaps   xmmword ptr [rdi+30h],xmm3
+0x00000482: C3                      ret      
+0x00000483: 66 66 66 66 2E 0F 1F    nop      word ptr cs:[rax+rax+0]
+0x0000048A: 84 00 00 00 00 00 
+
+fft16_sse:
+0x00000490: 0F 28 07                movaps   xmm0,xmmword ptr [rdi]
+0x00000493: 0F 28 4F 10             movaps   xmm1,xmmword ptr [rdi+10h]
+0x00000497: 0F 28 D0                movaps   xmm2,xmm0
+0x0000049A: 0F 5C D1                subps    xmm2,xmm1
+0x0000049D: 0F 58 C1                addps    xmm0,xmm1
+0x000004A0: 0F 57 14 25 00 00 00    xorps    xmm2,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000004A7: 00 
+                       R_X86_64_32 .rodata+0x80
+0x000004A8: 0F 28 C8                movaps   xmm1,xmm0
+0x000004AB: 0F C6 CA BE             shufps   xmm1,xmm2,0BEh
+0x000004AF: 0F C6 C2 44             shufps   xmm0,xmm2,44h
+0x000004B3: 0F 28 D0                movaps   xmm2,xmm0
+0x000004B6: 0F 5C D1                subps    xmm2,xmm1
+0x000004B9: 0F 58 C1                addps    xmm0,xmm1
+0x000004BC: 0F 28 C8                movaps   xmm1,xmm0
+0x000004BF: 0F C6 CA DD             shufps   xmm1,xmm2,0DDh
+0x000004C3: 0F C6 C2 88             shufps   xmm0,xmm2,88h
+0x000004C7: 0F 28 57 20             movaps   xmm2,xmmword ptr [rdi+20h]
+0x000004CB: 0F 28 5F 30             movaps   xmm3,xmmword ptr [rdi+30h]
+0x000004CF: 0F 28 EA                movaps   xmm5,xmm2
+0x000004D2: 0F 58 EB                addps    xmm5,xmm3
+0x000004D5: 0F 5C D3                subps    xmm2,xmm3
+0x000004D8: 0F 28 DA                movaps   xmm3,xmm2
+0x000004DB: 0F C6 DA B1             shufps   xmm3,xmm2,0B1h
+0x000004DF: 0F 59 14 25 00 00 00    mulps    xmm2,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000004E6: 00 
+                       R_X86_64_32 .rodata+0x60
+0x000004E7: 0F 59 1C 25 00 00 00    mulps    xmm3,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000004EE: 00 
+                       R_X86_64_32 .rodata+0x40
+0x000004EF: 0F 58 D3                addps    xmm2,xmm3
+0x000004F2: 0F 28 DD                movaps   xmm3,xmm5
+0x000004F5: 0F C6 DA 9C             shufps   xmm3,xmm2,9Ch
+0x000004F9: 0F C6 EA 36             shufps   xmm5,xmm2,36h
+0x000004FD: 0F 28 D5                movaps   xmm2,xmm5
+0x00000500: 0F 5C D3                subps    xmm2,xmm3
+0x00000503: 0F 58 EB                addps    xmm5,xmm3
+0x00000506: 0F 28 E5                movaps   xmm4,xmm5
+0x00000509: 0F C6 E2 8D             shufps   xmm4,xmm2,8Dh
+0x0000050D: 0F C6 EA D8             shufps   xmm5,xmm2,0D8h
+0x00000511: 0F 28 D0                movaps   xmm2,xmm0
+0x00000514: 0F 5C D5                subps    xmm2,xmm5
+0x00000517: 0F 58 C5                addps    xmm0,xmm5
+0x0000051A: 0F 28 D9                movaps   xmm3,xmm1
+0x0000051D: 0F 5C DC                subps    xmm3,xmm4
+0x00000520: 0F 58 CC                addps    xmm1,xmm4
+0x00000523: 0F 28 67 40             movaps   xmm4,xmmword ptr [rdi+40h]
+0x00000527: 0F 28 6F 50             movaps   xmm5,xmmword ptr [rdi+50h]
+0x0000052B: 0F 29 07                movaps   xmmword ptr [rdi],xmm0
+0x0000052E: 0F 29 4F 10             movaps   xmmword ptr [rdi+10h],xmm1
+0x00000532: 0F 29 57 20             movaps   xmmword ptr [rdi+20h],xmm2
+0x00000536: 0F 29 5F 30             movaps   xmmword ptr [rdi+30h],xmm3
+0x0000053A: 0F 28 F4                movaps   xmm6,xmm4
+0x0000053D: 0F 5C F5                subps    xmm6,xmm5
+0x00000540: 0F 58 E5                addps    xmm4,xmm5
+0x00000543: 0F 57 34 25 00 00 00    xorps    xmm6,xmmword ptr [fft8_avx (0000000000000000h)]
+0x0000054A: 00 
+                       R_X86_64_32 .rodata+0x80
+0x0000054B: 0F 28 EC                movaps   xmm5,xmm4
+0x0000054E: 0F C6 EE BE             shufps   xmm5,xmm6,0BEh
+0x00000552: 0F C6 E6 44             shufps   xmm4,xmm6,44h
+0x00000556: 0F 28 F4                movaps   xmm6,xmm4
+0x00000559: 0F 5C F5                subps    xmm6,xmm5
+0x0000055C: 0F 58 E5                addps    xmm4,xmm5
+0x0000055F: 0F 28 EC                movaps   xmm5,xmm4
+0x00000562: 0F C6 EE DD             shufps   xmm5,xmm6,0DDh
+0x00000566: 0F C6 E6 88             shufps   xmm4,xmm6,88h
+0x0000056A: 0F 28 77 60             movaps   xmm6,xmmword ptr [rdi+60h]
+0x0000056E: 0F 28 7F 70             movaps   xmm7,xmmword ptr [rdi+70h]
+0x00000572: 0F 28 C6                movaps   xmm0,xmm6
+0x00000575: 0F 5C C7                subps    xmm0,xmm7
+0x00000578: 0F 58 F7                addps    xmm6,xmm7
+0x0000057B: 0F 57 04 25 00 00 00    xorps    xmm0,xmmword ptr [fft8_avx (0000000000000000h)]
+0x00000582: 00 
+                       R_X86_64_32 .rodata+0x80
+0x00000583: 0F 28 FE                movaps   xmm7,xmm6
+0x00000586: 0F C6 F8 BE             shufps   xmm7,xmm0,0BEh
+0x0000058A: 0F C6 F0 44             shufps   xmm6,xmm0,44h
+0x0000058E: 0F 28 C6                movaps   xmm0,xmm6
+0x00000591: 0F 5C C7                subps    xmm0,xmm7
+0x00000594: 0F 58 F7                addps    xmm6,xmm7
+0x00000597: 0F 28 FE                movaps   xmm7,xmm6
+0x0000059A: 0F C6 F8 DD             shufps   xmm7,xmm0,0DDh
+0x0000059E: 0F C6 F0 88             shufps   xmm6,xmm0,88h
+0x000005A2: 0F 28 04 25 00 00 00    movaps   xmm0,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000005A9: 00 
+                       R_X86_64_32 ff_cos_16
+0x000005AA: 0F 28 0C 25 00 00 00    movaps   xmm1,xmmword ptr [fft8_avx (0000000000000000h)]
+0x000005B1: 00 
+                       R_X86_64_32 ff_cos_16
+0x000005B2: 0F 28 D4                movaps   xmm2,xmm4
+0x000005B5: 0F 59 D0                mulps    xmm2,xmm0
+0x000005B8: 0F 28 DD                movaps   xmm3,xmm5
+0x000005BB: 0F 59 D9                mulps    xmm3,xmm1
+0x000005BE: 0F 59 E1                mulps    xmm4,xmm1
+0x000005C1: 0F 59 E8                mulps    xmm5,xmm0
+0x000005C4: 0F 58 D3                addps    xmm2,xmm3
+0x000005C7: 0F 28 D9                movaps   xmm3,xmm1
+0x000005CA: 0F 59 DF                mulps    xmm3,xmm7
+0x000005CD: 0F 5C EC                subps    xmm5,xmm4
+0x000005D0: 0F 59 CE                mulps    xmm1,xmm6
+0x000005D3: 0F 28 E0                movaps   xmm4,xmm0
+0x000005D6: 0F 59 E6                mulps    xmm4,xmm6
+0x000005D9: 0F 59 C7                mulps    xmm0,xmm7
+0x000005DC: 0F 5C E3                subps    xmm4,xmm3
+0x000005DF: 0F 28 1F                movaps   xmm3,xmmword ptr [rdi]
+0x000005E2: 0F 58 C1                addps    xmm0,xmm1
+0x000005E5: 0F 28 CC                movaps   xmm1,xmm4
+0x000005E8: 0F 5C CA                subps    xmm1,xmm2
+0x000005EB: 0F 58 E2                addps    xmm4,xmm2
+0x000005EE: 0F 5C DC                subps    xmm3,xmm4
+0x000005F1: 0F 58 27                addps    xmm4,xmmword ptr [rdi]
+0x000005F4: 0F 28 77 20             movaps   xmm6,xmmword ptr [rdi+20h]
+0x000005F8: 0F 29 5F 40             movaps   xmmword ptr [rdi+40h],xmm3
+0x000005FC: 0F 29 27                movaps   xmmword ptr [rdi],xmm4
+0x000005FF: 0F 28 DD                movaps   xmm3,xmm5
+0x00000602: 0F 5C D8                subps    xmm3,xmm0
+0x00000605: 0F 28 E6                movaps   xmm4,xmm6
+0x00000608: 0F 5C E3                subps    xmm4,xmm3
+0x0000060B: 0F 58 DE                addps    xmm3,xmm6
+0x0000060E: 0F 29 67 60             movaps   xmmword ptr [rdi+60h],xmm4
+0x00000612: 0F 29 5F 20             movaps   xmmword ptr [rdi+20h],xmm3
+0x00000616: 0F 28 57 30             movaps   xmm2,xmmword ptr [rdi+30h]
+0x0000061A: 0F 28 DD                movaps   xmm3,xmm5
+0x0000061D: 0F 58 D8                addps    xmm3,xmm0
+0x00000620: 0F 5C D1                subps    xmm2,xmm1
+0x00000623: 0F 28 7F 10             movaps   xmm7,xmmword ptr [rdi+10h]
+0x00000627: 0F 58 4F 30             addps    xmm1,xmmword ptr [rdi+30h]
+0x0000062B: 0F 29 57 70             movaps   xmmword ptr [rdi+70h],xmm2
+0x0000062F: 0F 29 4F 30             movaps   xmmword ptr [rdi+30h],xmm1
+0x00000633: 0F 28 E7                movaps   xmm4,xmm7
+0x00000636: 0F 5C E3                subps    xmm4,xmm3
+0x00000639: 0F 58 DF                addps    xmm3,xmm7
+0x0000063C: 0F 29 67 50             movaps   xmmword ptr [rdi+50h],xmm4
+0x00000640: 0F 29 5F 10             movaps   xmmword ptr [rdi+10h],xmm3
+0x00000644: C3                      ret      
+0x00000645: 0F 1F 44 00 00          nop      dword ptr [rax+rax+0]
+0x0000064A: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+
+pass_avx:
+0x00000650: 4C 8D 04 52             lea      r8,[rdx+rdx*2]
+0x00000654: 48 8D 0C D5 00 00 00    lea      rcx,[rdx*8+0]
+0x0000065B: 00 
+0x0000065C: 49 C1 E0 04             shl      r8,4
+
+pass_avx.loop:
+0x00000660: C5 FC 28 24 8F          vmovaps  ymm4,ymmword ptr [rdi+rcx*4]
+0x00000665: C5 FC 28 6C 8F 20       vmovaps  ymm5,ymmword ptr [rdi+rcx*4+20h]
+0x0000066B: C5 FC 28 06             vmovaps  ymm0,ymmword ptr [rsi]
+0x0000066F: C5 FC 28 0C 0E          vmovaps  ymm1,ymmword ptr [rsi+rcx]
+0x00000674: C5 DC 59 D0             vmulps   ymm2,ymm4,ymm0
+0x00000678: C4 A1 7C 28 34 07       vmovaps  ymm6,ymmword ptr [rdi+r8]
+0x0000067E: C5 D4 59 D9             vmulps   ymm3,ymm5,ymm1
+0x00000682: C4 A1 7C 28 7C 07 20    vmovaps  ymm7,ymmword ptr [rdi+r8+20h]
+0x00000689: C5 DC 59 E1             vmulps   ymm4,ymm4,ymm1
+0x0000068D: C5 D4 59 E8             vmulps   ymm5,ymm5,ymm0
+0x00000691: C5 EC 58 D3             vaddps   ymm2,ymm2,ymm3
+0x00000695: C5 F4 59 DF             vmulps   ymm3,ymm1,ymm7
+0x00000699: C5 F4 59 CE             vmulps   ymm1,ymm1,ymm6
+0x0000069D: C5 D4 5C EC             vsubps   ymm5,ymm5,ymm4
+0x000006A1: C5 FC 59 E6             vmulps   ymm4,ymm0,ymm6
+0x000006A5: C5 FC 59 C7             vmulps   ymm0,ymm0,ymm7
+0x000006A9: C5 DC 5C E3             vsubps   ymm4,ymm4,ymm3
+0x000006AD: C5 FC 28 1F             vmovaps  ymm3,ymmword ptr [rdi]
+0x000006B1: C5 FC 58 C1             vaddps   ymm0,ymm0,ymm1
+0x000006B5: C5 DC 5C CA             vsubps   ymm1,ymm4,ymm2
+0x000006B9: C5 DC 58 E2             vaddps   ymm4,ymm4,ymm2
+0x000006BD: C5 E4 5C DC             vsubps   ymm3,ymm3,ymm4
+0x000006C1: C5 DC 58 27             vaddps   ymm4,ymm4,ymmword ptr [rdi]
+0x000006C5: C5 FC 28 34 4F          vmovaps  ymm6,ymmword ptr [rdi+rcx*2]
+0x000006CA: C5 FC 29 1C 8F          vmovaps  ymmword ptr [rdi+rcx*4],ymm3
+0x000006CF: C5 FC 29 27             vmovaps  ymmword ptr [rdi],ymm4
+0x000006D3: C5 D4 5C D8             vsubps   ymm3,ymm5,ymm0
+0x000006D7: C5 CC 5C E3             vsubps   ymm4,ymm6,ymm3
+0x000006DB: C5 E4 58 DE             vaddps   ymm3,ymm3,ymm6
+0x000006DF: C4 A1 7C 29 24 07       vmovaps  ymmword ptr [rdi+r8],ymm4
+0x000006E5: C5 FC 29 1C 4F          vmovaps  ymmword ptr [rdi+rcx*2],ymm3
+0x000006EA: C5 FC 28 54 4F 20       vmovaps  ymm2,ymmword ptr [rdi+rcx*2+20h]
+0x000006F0: C5 D4 58 E8             vaddps   ymm5,ymm5,ymm0
+0x000006F4: C5 EC 5C D1             vsubps   ymm2,ymm2,ymm1
+0x000006F8: C5 FC 28 7F 20          vmovaps  ymm7,ymmword ptr [rdi+20h]
+0x000006FD: C5 F4 58 4C 4F 20       vaddps   ymm1,ymm1,ymmword ptr [rdi+rcx*2+20h]
+0x00000703: C4 A1 7C 29 54 07 20    vmovaps  ymmword ptr [rdi+r8+20h],ymm2
+0x0000070A: C5 FC 29 4C 4F 20       vmovaps  ymmword ptr [rdi+rcx*2+20h],ymm1
+0x00000710: C5 C4 5C F5             vsubps   ymm6,ymm7,ymm5
+0x00000714: C5 D4 58 EF             vaddps   ymm5,ymm5,ymm7
+0x00000718: C5 FC 29 74 8F 20       vmovaps  ymmword ptr [rdi+rcx*4+20h],ymm6
+0x0000071E: C5 FC 29 6F 20          vmovaps  ymmword ptr [rdi+20h],ymm5
+0x00000723: 48 83 C7 40             add      rdi,40h
+0x00000727: 48 83 C6 20             add      rsi,20h
+0x0000072B: 83 EA 04                sub      edx,4
+0x0000072E: 0F 8F 2C FF FF FF       jg       pass_avx.loop (0000000000000660h)
+0x00000734: F3 C3                   ret      
+0x00000736: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000073D: 00 00 00 
+
+pass_interleave_avx:
+0x00000740: 4C 8D 04 52             lea      r8,[rdx+rdx*2]
+0x00000744: 48 8D 0C D5 00 00 00    lea      rcx,[rdx*8+0]
+0x0000074B: 00 
+0x0000074C: 49 C1 E0 04             shl      r8,4
+
+pass_interleave_avx.loop:
+0x00000750: C5 FC 28 24 8F          vmovaps  ymm4,ymmword ptr [rdi+rcx*4]
+0x00000755: C5 FC 28 6C 8F 20       vmovaps  ymm5,ymmword ptr [rdi+rcx*4+20h]
+0x0000075B: C5 FC 28 06             vmovaps  ymm0,ymmword ptr [rsi]
+0x0000075F: C5 FC 28 0C 0E          vmovaps  ymm1,ymmword ptr [rsi+rcx]
+0x00000764: C5 DC 59 D0             vmulps   ymm2,ymm4,ymm0
+0x00000768: C4 A1 7C 28 34 07       vmovaps  ymm6,ymmword ptr [rdi+r8]
+0x0000076E: C5 D4 59 D9             vmulps   ymm3,ymm5,ymm1
+0x00000772: C4 A1 7C 28 7C 07 20    vmovaps  ymm7,ymmword ptr [rdi+r8+20h]
+0x00000779: C5 DC 59 E1             vmulps   ymm4,ymm4,ymm1
+0x0000077D: C5 D4 59 E8             vmulps   ymm5,ymm5,ymm0
+0x00000781: C5 EC 58 D3             vaddps   ymm2,ymm2,ymm3
+0x00000785: C5 F4 59 DF             vmulps   ymm3,ymm1,ymm7
+0x00000789: C5 F4 59 CE             vmulps   ymm1,ymm1,ymm6
+0x0000078D: C5 D4 5C EC             vsubps   ymm5,ymm5,ymm4
+0x00000791: C5 FC 59 E6             vmulps   ymm4,ymm0,ymm6
+0x00000795: C5 FC 59 C7             vmulps   ymm0,ymm0,ymm7
+0x00000799: C5 DC 5C E3             vsubps   ymm4,ymm4,ymm3
+0x0000079D: C5 FC 28 1F             vmovaps  ymm3,ymmword ptr [rdi]
+0x000007A1: C5 FC 58 C1             vaddps   ymm0,ymm0,ymm1
+0x000007A5: C5 DC 5C CA             vsubps   ymm1,ymm4,ymm2
+0x000007A9: C5 DC 58 E2             vaddps   ymm4,ymm4,ymm2
+0x000007AD: C5 E4 5C DC             vsubps   ymm3,ymm3,ymm4
+0x000007B1: C5 DC 58 27             vaddps   ymm4,ymm4,ymmword ptr [rdi]
+0x000007B5: C5 FC 28 34 4F          vmovaps  ymm6,ymmword ptr [rdi+rcx*2]
+0x000007BA: C5 FC 29 1C 8F          vmovaps  ymmword ptr [rdi+rcx*4],ymm3
+0x000007BF: C5 FC 29 27             vmovaps  ymmword ptr [rdi],ymm4
+0x000007C3: C5 D4 5C D8             vsubps   ymm3,ymm5,ymm0
+0x000007C7: C5 CC 5C E3             vsubps   ymm4,ymm6,ymm3
+0x000007CB: C5 E4 58 DE             vaddps   ymm3,ymm3,ymm6
+0x000007CF: C5 FC 28 54 4F 20       vmovaps  ymm2,ymmword ptr [rdi+rcx*2+20h]
+0x000007D5: C5 D4 58 E8             vaddps   ymm5,ymm5,ymm0
+0x000007D9: C5 EC 5C D1             vsubps   ymm2,ymm2,ymm1
+0x000007DD: C5 FC 28 7F 20          vmovaps  ymm7,ymmword ptr [rdi+20h]
+0x000007E2: C5 F4 58 4C 4F 20       vaddps   ymm1,ymm1,ymmword ptr [rdi+rcx*2+20h]
+0x000007E8: C5 C4 5C F5             vsubps   ymm6,ymm7,ymm5
+0x000007EC: C5 D4 58 EF             vaddps   ymm5,ymm5,ymm7
+0x000007F0: C5 E4 15 F9             vunpckhps ymm7,ymm3,ymm1
+0x000007F4: C5 E4 14 D9             vunpcklps ymm3,ymm3,ymm1
+0x000007F8: C4 E3 7D 19 1C 4F 00    vextractf128 xmmword ptr [rdi+rcx*2],ymm3,0
+0x000007FF: C4 E3 7D 19 7C 4F 10    vextractf128 xmmword ptr [rdi+rcx*2+10h],ymm7,0
+0x00000806: 00 
+0x00000807: C4 E3 7D 19 5C 4F 20    vextractf128 xmmword ptr [rdi+rcx*2+20h],ymm3,1
+0x0000080E: 01 
+0x0000080F: C4 E3 7D 19 7C 4F 30    vextractf128 xmmword ptr [rdi+rcx*2+30h],ymm7,1
+0x00000816: 01 
+0x00000817: C5 DC 15 C2             vunpckhps ymm0,ymm4,ymm2
+0x0000081B: C5 DC 14 E2             vunpcklps ymm4,ymm4,ymm2
+0x0000081F: C4 A3 7D 19 24 07 00    vextractf128 xmmword ptr [rdi+r8],ymm4,0
+0x00000826: C4 A3 7D 19 44 07 10    vextractf128 xmmword ptr [rdi+r8+10h],ymm0,0
+0x0000082D: 00 
+0x0000082E: C4 A3 7D 19 64 07 20    vextractf128 xmmword ptr [rdi+r8+20h],ymm4,1
+0x00000835: 01 
+0x00000836: C4 A3 7D 19 44 07 30    vextractf128 xmmword ptr [rdi+r8+30h],ymm0,1
+0x0000083D: 01 
+0x0000083E: C5 FC 28 0F             vmovaps  ymm1,ymmword ptr [rdi]
+0x00000842: C5 FC 28 14 8F          vmovaps  ymm2,ymmword ptr [rdi+rcx*4]
+0x00000847: C5 F4 15 DD             vunpckhps ymm3,ymm1,ymm5
+0x0000084B: C5 F4 14 CD             vunpcklps ymm1,ymm1,ymm5
+0x0000084F: C4 E3 7D 19 0F 00       vextractf128 xmmword ptr [rdi],ymm1,0
+0x00000855: C4 E3 7D 19 5F 10 00    vextractf128 xmmword ptr [rdi+10h],ymm3,0
+0x0000085C: C4 E3 7D 19 4F 20 01    vextractf128 xmmword ptr [rdi+20h],ymm1,1
+0x00000863: C4 E3 7D 19 5F 30 01    vextractf128 xmmword ptr [rdi+30h],ymm3,1
+0x0000086A: C5 EC 15 FE             vunpckhps ymm7,ymm2,ymm6
+0x0000086E: C5 EC 14 D6             vunpcklps ymm2,ymm2,ymm6
+0x00000872: C4 E3 7D 19 14 8F 00    vextractf128 xmmword ptr [rdi+rcx*4],ymm2,0
+0x00000879: C4 E3 7D 19 7C 8F 10    vextractf128 xmmword ptr [rdi+rcx*4+10h],ymm7,0
+0x00000880: 00 
+0x00000881: C4 E3 7D 19 54 8F 20    vextractf128 xmmword ptr [rdi+rcx*4+20h],ymm2,1
+0x00000888: 01 
+0x00000889: C4 E3 7D 19 7C 8F 30    vextractf128 xmmword ptr [rdi+rcx*4+30h],ymm7,1
+0x00000890: 01 
+0x00000891: 48 83 C7 40             add      rdi,40h
+0x00000895: 48 83 C6 20             add      rsi,20h
+0x00000899: 83 EA 04                sub      edx,4
+0x0000089C: 0F 8F AE FE FF FF       jg       pass_interleave_avx.loop (0000000000000750h)
+0x000008A2: F3 C3                   ret      
+0x000008A4: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+0x000008AA: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+
+ff_fft_calc_avx:
+0x000008B0: 8B 0F                   mov      ecx,dword ptr [rdi]
+0x000008B2: 48 89 F7                mov      rdi,rsi
+0x000008B5: 48 89 CE                mov      rsi,rcx
+0x000008B8: 48 8D 14 25 00 00 00    lea      rdx,[fft8_avx (0000000000000000h)]
+0x000008BF: 00 
+                       R_X86_64_32 .text+0x11D8
+0x000008C0: 48 8B 54 F2 F0          mov      rdx,qword ptr [rdx+rsi*8-10h]
+0x000008C5: FF D2                   call     rdx
+0x000008C7: C5 F8 77                vzeroupper 
+0x000008CA: C3                      ret      
+0x000008CB: 0F 1F 44 00 00          nop      dword ptr [rax+rax+0]
+
+pass_sse:
+0x000008D0: 4C 8D 04 52             lea      r8,[rdx+rdx*2]
+0x000008D4: 48 8D 0C D5 00 00 00    lea      rcx,[rdx*8+0]
+0x000008DB: 00 
+0x000008DC: 49 C1 E0 04             shl      r8,4
+
+pass_sse.loop:
+0x000008E0: 0F 28 24 8F             movaps   xmm4,xmmword ptr [rdi+rcx*4]
+0x000008E4: 0F 28 6C 8F 10          movaps   xmm5,xmmword ptr [rdi+rcx*4+10h]
+0x000008E9: 0F 28 06                movaps   xmm0,xmmword ptr [rsi]
+0x000008EC: 0F 28 0C 0E             movaps   xmm1,xmmword ptr [rsi+rcx]
+0x000008F0: 0F 28 D4                movaps   xmm2,xmm4
+0x000008F3: 0F 59 D0                mulps    xmm2,xmm0
+0x000008F6: 42 0F 28 34 07          movaps   xmm6,xmmword ptr [rdi+r8]
+0x000008FB: 0F 28 DD                movaps   xmm3,xmm5
+0x000008FE: 0F 59 D9                mulps    xmm3,xmm1
+0x00000901: 42 0F 28 7C 07 10       movaps   xmm7,xmmword ptr [rdi+r8+10h]
+0x00000907: 0F 59 E1                mulps    xmm4,xmm1
+0x0000090A: 0F 59 E8                mulps    xmm5,xmm0
+0x0000090D: 0F 58 D3                addps    xmm2,xmm3
+0x00000910: 0F 28 D9                movaps   xmm3,xmm1
+0x00000913: 0F 59 DF                mulps    xmm3,xmm7
+0x00000916: 0F 59 CE                mulps    xmm1,xmm6
+0x00000919: 0F 5C EC                subps    xmm5,xmm4
+0x0000091C: 0F 28 E0                movaps   xmm4,xmm0
+0x0000091F: 0F 59 E6                mulps    xmm4,xmm6
+0x00000922: 0F 59 C7                mulps    xmm0,xmm7
+0x00000925: 0F 5C E3                subps    xmm4,xmm3
+0x00000928: 0F 28 1F                movaps   xmm3,xmmword ptr [rdi]
+0x0000092B: 0F 58 C1                addps    xmm0,xmm1
+0x0000092E: 0F 28 CC                movaps   xmm1,xmm4
+0x00000931: 0F 5C CA                subps    xmm1,xmm2
+0x00000934: 0F 58 E2                addps    xmm4,xmm2
+0x00000937: 0F 5C DC                subps    xmm3,xmm4
+0x0000093A: 0F 58 27                addps    xmm4,xmmword ptr [rdi]
+0x0000093D: 0F 28 34 4F             movaps   xmm6,xmmword ptr [rdi+rcx*2]
+0x00000941: 0F 29 1C 8F             movaps   xmmword ptr [rdi+rcx*4],xmm3
+0x00000945: 0F 29 27                movaps   xmmword ptr [rdi],xmm4
+0x00000948: 0F 28 DD                movaps   xmm3,xmm5
+0x0000094B: 0F 5C D8                subps    xmm3,xmm0
+0x0000094E: 0F 28 E6                movaps   xmm4,xmm6
+0x00000951: 0F 5C E3                subps    xmm4,xmm3
+0x00000954: 0F 58 DE                addps    xmm3,xmm6
+0x00000957: 42 0F 29 24 07          movaps   xmmword ptr [rdi+r8],xmm4
+0x0000095C: 0F 29 1C 4F             movaps   xmmword ptr [rdi+rcx*2],xmm3
+0x00000960: 0F 28 54 4F 10          movaps   xmm2,xmmword ptr [rdi+rcx*2+10h]
+0x00000965: 0F 58 E8                addps    xmm5,xmm0
+0x00000968: 0F 5C D1                subps    xmm2,xmm1
+0x0000096B: 0F 28 7F 10             movaps   xmm7,xmmword ptr [rdi+10h]
+0x0000096F: 0F 58 4C 4F 10          addps    xmm1,xmmword ptr [rdi+rcx*2+10h]
+0x00000974: 42 0F 29 54 07 10       movaps   xmmword ptr [rdi+r8+10h],xmm2
+0x0000097A: 0F 29 4C 4F 10          movaps   xmmword ptr [rdi+rcx*2+10h],xmm1
+0x0000097F: 0F 28 F7                movaps   xmm6,xmm7
+0x00000982: 0F 5C F5                subps    xmm6,xmm5
+0x00000985: 0F 58 EF                addps    xmm5,xmm7
+0x00000988: 0F 29 74 8F 10          movaps   xmmword ptr [rdi+rcx*4+10h],xmm6
+0x0000098D: 0F 29 6F 10             movaps   xmmword ptr [rdi+10h],xmm5
+0x00000991: 48 83 C7 20             add      rdi,20h
+0x00000995: 48 83 C6 10             add      rsi,10h
+0x00000999: 83 EA 02                sub      edx,2
+0x0000099C: 0F 8F 3E FF FF FF       jg       pass_sse.loop (00000000000008E0h)
+0x000009A2: F3 C3                   ret      
+0x000009A4: 66 66 66 2E 0F 1F 84    nop      word ptr cs:[rax+rax+0]
+0x000009AB: 00 00 00 00 00 
+
+pass_interleave_sse:
+0x000009B0: 4C 8D 04 52             lea      r8,[rdx+rdx*2]
+0x000009B4: 48 8D 0C D5 00 00 00    lea      rcx,[rdx*8+0]
+0x000009BB: 00 
+0x000009BC: 49 C1 E0 04             shl      r8,4
+
+pass_interleave_sse.loop:
+0x000009C0: 0F 28 24 8F             movaps   xmm4,xmmword ptr [rdi+rcx*4]
+0x000009C4: 0F 28 6C 8F 10          movaps   xmm5,xmmword ptr [rdi+rcx*4+10h]
+0x000009C9: 0F 28 06                movaps   xmm0,xmmword ptr [rsi]
+0x000009CC: 0F 28 0C 0E             movaps   xmm1,xmmword ptr [rsi+rcx]
+0x000009D0: 0F 28 D4                movaps   xmm2,xmm4
+0x000009D3: 0F 59 D0                mulps    xmm2,xmm0
+0x000009D6: 42 0F 28 34 07          movaps   xmm6,xmmword ptr [rdi+r8]
+0x000009DB: 0F 28 DD                movaps   xmm3,xmm5
+0x000009DE: 0F 59 D9                mulps    xmm3,xmm1
+0x000009E1: 42 0F 28 7C 07 10       movaps   xmm7,xmmword ptr [rdi+r8+10h]
+0x000009E7: 0F 59 E1                mulps    xmm4,xmm1
+0x000009EA: 0F 59 E8                mulps    xmm5,xmm0
+0x000009ED: 0F 58 D3                addps    xmm2,xmm3
+0x000009F0: 0F 28 D9                movaps   xmm3,xmm1
+0x000009F3: 0F 59 DF                mulps    xmm3,xmm7
+0x000009F6: 0F 59 CE                mulps    xmm1,xmm6
+0x000009F9: 0F 5C EC                subps    xmm5,xmm4
+0x000009FC: 0F 28 E0                movaps   xmm4,xmm0
+0x000009FF: 0F 59 E6                mulps    xmm4,xmm6
+0x00000A02: 0F 59 C7                mulps    xmm0,xmm7
+0x00000A05: 0F 5C E3                subps    xmm4,xmm3
+0x00000A08: 0F 28 1F                movaps   xmm3,xmmword ptr [rdi]
+0x00000A0B: 0F 58 C1                addps    xmm0,xmm1
+0x00000A0E: 0F 28 CC                movaps   xmm1,xmm4
+0x00000A11: 0F 5C CA                subps    xmm1,xmm2
+0x00000A14: 0F 58 E2                addps    xmm4,xmm2
+0x00000A17: 0F 5C DC                subps    xmm3,xmm4
+0x00000A1A: 0F 58 27                addps    xmm4,xmmword ptr [rdi]
+0x00000A1D: 0F 28 34 4F             movaps   xmm6,xmmword ptr [rdi+rcx*2]
+0x00000A21: 0F 29 1C 8F             movaps   xmmword ptr [rdi+rcx*4],xmm3
+0x00000A25: 0F 29 27                movaps   xmmword ptr [rdi],xmm4
+0x00000A28: 0F 28 DD                movaps   xmm3,xmm5
+0x00000A2B: 0F 5C D8                subps    xmm3,xmm0
+0x00000A2E: 0F 28 E6                movaps   xmm4,xmm6
+0x00000A31: 0F 5C E3                subps    xmm4,xmm3
+0x00000A34: 0F 58 DE                addps    xmm3,xmm6
+0x00000A37: 0F 28 54 4F 10          movaps   xmm2,xmmword ptr [rdi+rcx*2+10h]
+0x00000A3C: 0F 58 E8                addps    xmm5,xmm0
+0x00000A3F: 0F 5C D1                subps    xmm2,xmm1
+0x00000A42: 0F 28 7F 10             movaps   xmm7,xmmword ptr [rdi+10h]
+0x00000A46: 0F 58 4C 4F 10          addps    xmm1,xmmword ptr [rdi+rcx*2+10h]
+0x00000A4B: 0F 28 F7                movaps   xmm6,xmm7
+0x00000A4E: 0F 5C F5                subps    xmm6,xmm5
+0x00000A51: 0F 58 EF                addps    xmm5,xmm7
+0x00000A54: 0F 28 FB                movaps   xmm7,xmm3
+0x00000A57: 0F 14 D9                unpcklps xmm3,xmm1
+0x00000A5A: 0F 15 F9                unpckhps xmm7,xmm1
+0x00000A5D: 0F 29 1C 4F             movaps   xmmword ptr [rdi+rcx*2],xmm3
+0x00000A61: 0F 29 7C 4F 10          movaps   xmmword ptr [rdi+rcx*2+10h],xmm7
+0x00000A66: 0F 28 C4                movaps   xmm0,xmm4
+0x00000A69: 0F 14 E2                unpcklps xmm4,xmm2
+0x00000A6C: 0F 15 C2                unpckhps xmm0,xmm2
+0x00000A6F: 42 0F 29 24 07          movaps   xmmword ptr [rdi+r8],xmm4
+0x00000A74: 42 0F 29 44 07 10       movaps   xmmword ptr [rdi+r8+10h],xmm0
+0x00000A7A: 0F 28 0F                movaps   xmm1,xmmword ptr [rdi]
+0x00000A7D: 0F 28 14 8F             movaps   xmm2,xmmword ptr [rdi+rcx*4]
+0x00000A81: 0F 28 D9                movaps   xmm3,xmm1
+0x00000A84: 0F 14 CD                unpcklps xmm1,xmm5
+0x00000A87: 0F 15 DD                unpckhps xmm3,xmm5
+0x00000A8A: 0F 29 0F                movaps   xmmword ptr [rdi],xmm1
+0x00000A8D: 0F 29 5F 10             movaps   xmmword ptr [rdi+10h],xmm3
+0x00000A91: 0F 28 FA                movaps   xmm7,xmm2
+0x00000A94: 0F 14 D6                unpcklps xmm2,xmm6
+0x00000A97: 0F 15 FE                unpckhps xmm7,xmm6
+0x00000A9A: 0F 29 14 8F             movaps   xmmword ptr [rdi+rcx*4],xmm2
+0x00000A9E: 0F 29 7C 8F 10          movaps   xmmword ptr [rdi+rcx*4+10h],xmm7
+0x00000AA3: 48 83 C7 20             add      rdi,20h
+0x00000AA7: 48 83 C6 10             add      rsi,10h
+0x00000AAB: 83 EA 02                sub      edx,2
+0x00000AAE: 0F 8F 0C FF FF FF       jg       pass_interleave_sse.loop (00000000000009C0h)
+0x00000AB4: F3 C3                   ret      
+0x00000AB6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x00000ABD: 00 00 00 
+
+ff_fft_calc_sse:
+0x00000AC0: 8B 0F                   mov      ecx,dword ptr [rdi]
+0x00000AC2: 56                      push     rsi
+0x00000AC3: 51                      push     rcx
+0x00000AC4: 48 89 F7                mov      rdi,rsi
+0x00000AC7: 48 89 CE                mov      rsi,rcx
+0x00000ACA: 48 8D 14 25 00 00 00    lea      rdx,[fft8_avx (0000000000000000h)]
+0x00000AD1: 00 
+                       R_X86_64_32 .text+0x1898
+0x00000AD2: 48 8B 54 F2 F0          mov      rdx,qword ptr [rdx+rsi*8-10h]
+0x00000AD7: FF D2                   call     rdx
+0x00000AD9: 59                      pop      rcx
+0x00000ADA: 41 58                   pop      r8
+0x00000ADC: 48 83 F9 04             cmp      rcx,4
+0x00000AE0: 7F 36                   jg       ff_fft_calc_sse.end (0000000000000B18h)
+0x00000AE2: 48 C7 C2 FF FF FF FF    mov      rdx,0FFFFFFFFh
+0x00000AE9: 48 83 C1 03             add      rcx,3
+0x00000AED: 48 D3 E2                shl      rdx,cl
+0x00000AF0: 49 29 D0                sub      r8,rdx
+
+ff_fft_calc_sse.loop:
+0x00000AF3: 41 0F 28 04 10          movaps   xmm0,xmmword ptr [r8+rdx]
+0x00000AF8: 0F 28 C8                movaps   xmm1,xmm0
+0x00000AFB: 41 0F 14 44 10 10       unpcklps xmm0,xmmword ptr [r8+rdx+10h]
+0x00000B01: 41 0F 15 4C 10 10       unpckhps xmm1,xmmword ptr [r8+rdx+10h]
+0x00000B07: 41 0F 29 04 10          movaps   xmmword ptr [r8+rdx],xmm0
+0x00000B0C: 41 0F 29 4C 10 10       movaps   xmmword ptr [r8+rdx+10h],xmm1
+0x00000B12: 48 83 C2 20             add      rdx,20h
+0x00000B16: 7C DB                   jl       ff_fft_calc_sse.loop (0000000000000AF3h)
+
+ff_fft_calc_sse.end:
+0x00000B18: F3 C3                   ret      
+0x00000B1A: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+
+ff_fft_permute_sse:
+0x00000B20: 4C 8B 47 08             mov      r8,qword ptr [rdi+8]
+0x00000B24: 4C 8B 4F 10             mov      r9,qword ptr [rdi+10h]
+0x00000B28: 8B 0F                   mov      ecx,dword ptr [rdi]
+0x00000B2A: 48 C7 C2 01 00 00 00    mov      rdx,1
+0x00000B31: 48 D3 E2                shl      rdx,cl
+0x00000B34: 48 31 FF                xor      rdi,rdi
+
+ff_fft_permute_sse.loop:
+0x00000B37: 0F 28 04 FE             movaps   xmm0,xmmword ptr [rsi+rdi*8]
+0x00000B3B: 49 0F B7 04 78          movzx    rax,word ptr [r8+rdi*2]
+0x00000B40: 49 0F B7 4C 78 02       movzx    rcx,word ptr [r8+rdi*2+2]
+0x00000B46: 41 0F 13 04 C1          movlps   qword ptr [r9+rax*8],xmm0
+0x00000B4B: 41 0F 17 04 C9          movhps   qword ptr [r9+rcx*8],xmm0
+0x00000B50: 48 83 C7 02             add      rdi,2
+0x00000B54: 48 39 D7                cmp      rdi,rdx
+0x00000B57: 7C DE                   jl       ff_fft_permute_sse.loop (0000000000000B37h)
+0x00000B59: 48 C1 E2 03             shl      rdx,3
+0x00000B5D: 48 01 D6                add      rsi,rdx
+0x00000B60: 49 01 D1                add      r9,rdx
+0x00000B63: 48 F7 DA                neg      rdx
+
+ff_fft_permute_sse.loopcopy:
+0x00000B66: 41 0F 28 04 11          movaps   xmm0,xmmword ptr [r9+rdx]
+0x00000B6B: 41 0F 28 4C 11 10       movaps   xmm1,xmmword ptr [r9+rdx+10h]
+0x00000B71: 0F 29 04 16             movaps   xmmword ptr [rsi+rdx],xmm0
+0x00000B75: 0F 29 4C 16 10          movaps   xmmword ptr [rsi+rdx+10h],xmm1
+0x00000B7A: 48 83 C2 20             add      rdx,20h
+0x00000B7E: 7C E6                   jl       ff_fft_permute_sse.loopcopy (0000000000000B66h)
+0x00000B80: F3 C3                   ret      
+0x00000B82: 66 66 66 66 66 2E 0F    nop      word ptr cs:[rax+rax+0]
+0x00000B89: 1F 84 00 00 00 00 00 
+
+ff_imdct_calc_sse:
+0x00000B90: 8B 4F 18                mov      ecx,dword ptr [rdi+18h]
+0x00000B93: 4C 8B 47 48             mov      r8,qword ptr [rdi+48h]
+0x00000B97: 48 01 CE                add      rsi,rcx
+0x00000B9A: 51                      push     rcx
+0x00000B9B: 56                      push     rsi
+0x00000B9C: 48 83 EC 08             sub      rsp,8
+0x00000BA0: 41 FF D0                call     r8
+0x00000BA3: 48 83 C4 08             add      rsp,8
+0x00000BA7: 5E                      pop      rsi
+0x00000BA8: 59                      pop      rcx
+0x00000BA9: 48 8D 3C 4E             lea      rdi,[rsi+rcx*2]
+0x00000BAD: 48 89 CA                mov      rdx,rcx
+0x00000BB0: 48 83 E9 10             sub      rcx,10h
+0x00000BB4: 48 F7 DA                neg      rdx
+0x00000BB7: 0F 28 14 25 00 00 00    movaps   xmm2,xmmword ptr [fft8_avx (0000000000000000h)]
+0x00000BBE: 00 
+                       R_X86_64_32 .rodata+0x120
+
+ff_imdct_calc_sse.loop:
+0x00000BBF: 0F 28 04 0E             movaps   xmm0,xmmword ptr [rsi+rcx]
+0x00000BC3: 0F 28 0C 17             movaps   xmm1,xmmword ptr [rdi+rdx]
+0x00000BC7: 0F C6 C0 1B             shufps   xmm0,xmm0,1Bh
+0x00000BCB: 0F C6 C9 1B             shufps   xmm1,xmm1,1Bh
+0x00000BCF: 0F 57 C2                xorps    xmm0,xmm2
+0x00000BD2: 0F 29 0C 0F             movaps   xmmword ptr [rdi+rcx],xmm1
+0x00000BD6: 0F 29 04 16             movaps   xmmword ptr [rsi+rdx],xmm0
+0x00000BDA: 48 83 E9 10             sub      rcx,10h
+0x00000BDE: 48 83 C2 10             add      rdx,10h
+0x00000BE2: 7C DB                   jl       ff_imdct_calc_sse.loop (0000000000000BBFh)
+0x00000BE4: F3 C3                   ret      
+0x00000BE6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000BED: 00 00 00 
+
+fft64_avx:
+0x00000BF0: E8 EB F5 FF FF          call     fft32_avx (00000000000001E0h)
+0x00000BF5: 48 81 C7 00 01 00 00    add      rdi,100h
+0x00000BFC: E8 8F F4 FF FF          call     fft16_avx (0000000000000090h)
+0x00000C01: 48 83 EF 80             sub      rdi,0FFFFFFFFFFFFFF80h
+0x00000C05: E8 86 F4 FF FF          call     fft16_avx (0000000000000090h)
+0x00000C0A: 48 81 EF 80 01 00 00    sub      rdi,180h
+0x00000C11: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000C18: 00 
+                       R_X86_64_32 ff_cos_64
+0x00000C19: BA 08 00 00 00          mov      edx,8
+0x00000C1E: E9 2D FA FF FF          jmp      pass_avx (0000000000000650h)
+0x00000C23: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+0x00000C29: 0F 1F 80 00 00 00 00    nop      dword ptr [rax+0]
+
+fft128_avx:
+0x00000C30: E8 BB FF FF FF          call     fft64_avx (0000000000000BF0h)
+0x00000C35: 48 81 C7 80 01 00 00    add      rdi,180h
+0x00000C3C: E8 9F F5 FF FF          call     fft32_avx (00000000000001E0h)
+0x00000C41: 48 81 C7 00 01 00 00    add      rdi,100h
+0x00000C48: E8 93 F5 FF FF          call     fft32_avx (00000000000001E0h)
+0x00000C4D: 48 81 EF 00 03 00 00    sub      rdi,300h
+0x00000C54: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000C5B: 00 
+                       R_X86_64_32 ff_cos_128
+0x00000C5C: BA 10 00 00 00          mov      edx,10h
+0x00000C61: E9 EA F9 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000C66: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000C6D: 00 00 00 
+
+fft256_avx:
+0x00000C70: E8 BB FF FF FF          call     fft128_avx (0000000000000C30h)
+0x00000C75: 48 81 C7 00 03 00 00    add      rdi,300h
+0x00000C7C: E8 6F FF FF FF          call     fft64_avx (0000000000000BF0h)
+0x00000C81: 48 81 C7 80 01 00 00    add      rdi,180h
+0x00000C88: E8 63 FF FF FF          call     fft64_avx (0000000000000BF0h)
+0x00000C8D: 48 81 EF 80 06 00 00    sub      rdi,680h
+0x00000C94: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000C9B: 00 
+                       R_X86_64_32 ff_cos_256
+0x00000C9C: BA 20 00 00 00          mov      edx,20h
+0x00000CA1: E9 AA F9 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000CA6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000CAD: 00 00 00 
+
+fft512_avx:
+0x00000CB0: E8 BB FF FF FF          call     fft256_avx (0000000000000C70h)
+0x00000CB5: 48 81 C7 00 06 00 00    add      rdi,600h
+0x00000CBC: E8 6F FF FF FF          call     fft128_avx (0000000000000C30h)
+0x00000CC1: 48 81 C7 00 03 00 00    add      rdi,300h
+0x00000CC8: E8 63 FF FF FF          call     fft128_avx (0000000000000C30h)
+0x00000CCD: 48 81 EF 00 0D 00 00    sub      rdi,0D00h
+0x00000CD4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000CDB: 00 
+                       R_X86_64_32 ff_cos_512
+0x00000CDC: BA 40 00 00 00          mov      edx,40h
+0x00000CE1: E9 6A F9 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000CE6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000CED: 00 00 00 
+
+fft1024_avx:
+0x00000CF0: E8 BB FF FF FF          call     fft512_avx (0000000000000CB0h)
+0x00000CF5: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x00000CFC: E8 6F FF FF FF          call     fft256_avx (0000000000000C70h)
+0x00000D01: 48 81 C7 00 06 00 00    add      rdi,600h
+0x00000D08: E8 63 FF FF FF          call     fft256_avx (0000000000000C70h)
+0x00000D0D: 48 81 EF 00 1A 00 00    sub      rdi,1A00h
+0x00000D14: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000D1B: 00 
+                       R_X86_64_32 ff_cos_1024
+0x00000D1C: BA 80 00 00 00          mov      edx,80h
+0x00000D21: E9 2A F9 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000D26: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000D2D: 00 00 00 
+
+fft2048_avx:
+0x00000D30: E8 BB FF FF FF          call     fft1024_avx (0000000000000CF0h)
+0x00000D35: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x00000D3C: E8 6F FF FF FF          call     fft512_avx (0000000000000CB0h)
+0x00000D41: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x00000D48: E8 63 FF FF FF          call     fft512_avx (0000000000000CB0h)
+0x00000D4D: 48 81 EF 00 34 00 00    sub      rdi,3400h
+0x00000D54: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000D5B: 00 
+                       R_X86_64_32 ff_cos_2048
+0x00000D5C: BA 00 01 00 00          mov      edx,100h
+0x00000D61: E9 EA F8 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000D66: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000D6D: 00 00 00 
+
+fft4096_avx:
+0x00000D70: E8 BB FF FF FF          call     fft2048_avx (0000000000000D30h)
+0x00000D75: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x00000D7C: E8 6F FF FF FF          call     fft1024_avx (0000000000000CF0h)
+0x00000D81: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x00000D88: E8 63 FF FF FF          call     fft1024_avx (0000000000000CF0h)
+0x00000D8D: 48 81 EF 00 68 00 00    sub      rdi,6800h
+0x00000D94: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000D9B: 00 
+                       R_X86_64_32 ff_cos_4096
+0x00000D9C: BA 00 02 00 00          mov      edx,200h
+0x00000DA1: E9 AA F8 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000DA6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000DAD: 00 00 00 
+
+fft8192_avx:
+0x00000DB0: E8 BB FF FF FF          call     fft4096_avx (0000000000000D70h)
+0x00000DB5: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x00000DBC: E8 6F FF FF FF          call     fft2048_avx (0000000000000D30h)
+0x00000DC1: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x00000DC8: E8 63 FF FF FF          call     fft2048_avx (0000000000000D30h)
+0x00000DCD: 48 81 EF 00 D0 00 00    sub      rdi,0D000h
+0x00000DD4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000DDB: 00 
+                       R_X86_64_32 ff_cos_8192
+0x00000DDC: BA 00 04 00 00          mov      edx,400h
+0x00000DE1: E9 6A F8 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000DE6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000DED: 00 00 00 
+
+fft16384_avx:
+0x00000DF0: E8 BB FF FF FF          call     fft8192_avx (0000000000000DB0h)
+0x00000DF5: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x00000DFC: E8 6F FF FF FF          call     fft4096_avx (0000000000000D70h)
+0x00000E01: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x00000E08: E8 63 FF FF FF          call     fft4096_avx (0000000000000D70h)
+0x00000E0D: 48 81 EF 00 A0 01 00    sub      rdi,1A000h
+0x00000E14: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000E1B: 00 
+                       R_X86_64_32 ff_cos_16384
+0x00000E1C: BA 00 08 00 00          mov      edx,800h
+0x00000E21: E9 2A F8 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000E26: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000E2D: 00 00 00 
+
+fft32768_avx:
+0x00000E30: E8 BB FF FF FF          call     fft16384_avx (0000000000000DF0h)
+0x00000E35: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x00000E3C: E8 6F FF FF FF          call     fft8192_avx (0000000000000DB0h)
+0x00000E41: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x00000E48: E8 63 FF FF FF          call     fft8192_avx (0000000000000DB0h)
+0x00000E4D: 48 81 EF 00 40 03 00    sub      rdi,34000h
+0x00000E54: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000E5B: 00 
+                       R_X86_64_32 ff_cos_32768
+0x00000E5C: BA 00 10 00 00          mov      edx,1000h
+0x00000E61: E9 EA F7 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000E66: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000E6D: 00 00 00 
+
+fft65536_avx:
+0x00000E70: E8 BB FF FF FF          call     fft32768_avx (0000000000000E30h)
+0x00000E75: 48 81 C7 00 00 03 00    add      rdi,30000h
+0x00000E7C: E8 6F FF FF FF          call     fft16384_avx (0000000000000DF0h)
+0x00000E81: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x00000E88: E8 63 FF FF FF          call     fft16384_avx (0000000000000DF0h)
+0x00000E8D: 48 81 EF 00 80 06 00    sub      rdi,68000h
+0x00000E94: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000E9B: 00 
+                       R_X86_64_32 ff_cos_65536
+0x00000E9C: BA 00 20 00 00          mov      edx,2000h
+0x00000EA1: E9 AA F7 FF FF          jmp      pass_avx (0000000000000650h)
+0x00000EA6: 66 90                   nop      
+
+dispatch_tab_avx:
+0x00000EA8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x3A0
+0x00000EAA: 00 00                   add      byte ptr [rax],al
+0x00000EAC: 00 00                   add      byte ptr [rax],al
+0x00000EAE: 00 00                   add      byte ptr [rax],al
+0x00000EB0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text
+0x00000EB2: 00 00                   add      byte ptr [rax],al
+0x00000EB4: 00 00                   add      byte ptr [rax],al
+0x00000EB6: 00 00                   add      byte ptr [rax],al
+0x00000EB8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x90
+0x00000EBA: 00 00                   add      byte ptr [rax],al
+0x00000EBC: 00 00                   add      byte ptr [rax],al
+0x00000EBE: 00 00                   add      byte ptr [rax],al
+0x00000EC0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1E0
+0x00000EC2: 00 00                   add      byte ptr [rax],al
+0x00000EC4: 00 00                   add      byte ptr [rax],al
+0x00000EC6: 00 00                   add      byte ptr [rax],al
+0x00000EC8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xBF0
+0x00000ECA: 00 00                   add      byte ptr [rax],al
+0x00000ECC: 00 00                   add      byte ptr [rax],al
+0x00000ECE: 00 00                   add      byte ptr [rax],al
+0x00000ED0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xC30
+0x00000ED2: 00 00                   add      byte ptr [rax],al
+0x00000ED4: 00 00                   add      byte ptr [rax],al
+0x00000ED6: 00 00                   add      byte ptr [rax],al
+0x00000ED8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xC70
+0x00000EDA: 00 00                   add      byte ptr [rax],al
+0x00000EDC: 00 00                   add      byte ptr [rax],al
+0x00000EDE: 00 00                   add      byte ptr [rax],al
+0x00000EE0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xCB0
+0x00000EE2: 00 00                   add      byte ptr [rax],al
+0x00000EE4: 00 00                   add      byte ptr [rax],al
+0x00000EE6: 00 00                   add      byte ptr [rax],al
+0x00000EE8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xCF0
+0x00000EEA: 00 00                   add      byte ptr [rax],al
+0x00000EEC: 00 00                   add      byte ptr [rax],al
+0x00000EEE: 00 00                   add      byte ptr [rax],al
+0x00000EF0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xD30
+0x00000EF2: 00 00                   add      byte ptr [rax],al
+0x00000EF4: 00 00                   add      byte ptr [rax],al
+0x00000EF6: 00 00                   add      byte ptr [rax],al
+0x00000EF8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xD70
+0x00000EFA: 00 00                   add      byte ptr [rax],al
+0x00000EFC: 00 00                   add      byte ptr [rax],al
+0x00000EFE: 00 00                   add      byte ptr [rax],al
+0x00000F00: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xDB0
+0x00000F02: 00 00                   add      byte ptr [rax],al
+0x00000F04: 00 00                   add      byte ptr [rax],al
+0x00000F06: 00 00                   add      byte ptr [rax],al
+0x00000F08: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xDF0
+0x00000F0A: 00 00                   add      byte ptr [rax],al
+0x00000F0C: 00 00                   add      byte ptr [rax],al
+0x00000F0E: 00 00                   add      byte ptr [rax],al
+0x00000F10: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xE30
+0x00000F12: 00 00                   add      byte ptr [rax],al
+0x00000F14: 00 00                   add      byte ptr [rax],al
+0x00000F16: 00 00                   add      byte ptr [rax],al
+0x00000F18: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xE70
+0x00000F1A: 00 00                   add      byte ptr [rax],al
+0x00000F1C: 00 00                   add      byte ptr [rax],al
+0x00000F1E: 00 00                   add      byte ptr [rax],al
+
+fft64_interleave_avx:
+0x00000F20: E8 BB F2 FF FF          call     fft32_avx (00000000000001E0h)
+0x00000F25: 48 81 C7 00 01 00 00    add      rdi,100h
+0x00000F2C: E8 5F F1 FF FF          call     fft16_avx (0000000000000090h)
+0x00000F31: 48 83 EF 80             sub      rdi,0FFFFFFFFFFFFFF80h
+0x00000F35: E8 56 F1 FF FF          call     fft16_avx (0000000000000090h)
+0x00000F3A: 48 81 EF 80 01 00 00    sub      rdi,180h
+0x00000F41: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000F48: 00 
+                       R_X86_64_32 ff_cos_64
+0x00000F49: BA 08 00 00 00          mov      edx,8
+0x00000F4E: E9 ED F7 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00000F53: 66 0F 1F 44 00 00       nop      word ptr [rax+rax+0]
+0x00000F59: 0F 1F 80 00 00 00 00    nop      dword ptr [rax+0]
+
+fft128_interleave_avx:
+0x00000F60: E8 8B FC FF FF          call     fft64_avx (0000000000000BF0h)
+0x00000F65: 48 81 C7 80 01 00 00    add      rdi,180h
+0x00000F6C: E8 6F F2 FF FF          call     fft32_avx (00000000000001E0h)
+0x00000F71: 48 81 C7 00 01 00 00    add      rdi,100h
+0x00000F78: E8 63 F2 FF FF          call     fft32_avx (00000000000001E0h)
+0x00000F7D: 48 81 EF 00 03 00 00    sub      rdi,300h
+0x00000F84: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000F8B: 00 
+                       R_X86_64_32 ff_cos_128
+0x00000F8C: BA 10 00 00 00          mov      edx,10h
+0x00000F91: E9 AA F7 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00000F96: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000F9D: 00 00 00 
+
+fft256_interleave_avx:
+0x00000FA0: E8 8B FC FF FF          call     fft128_avx (0000000000000C30h)
+0x00000FA5: 48 81 C7 00 03 00 00    add      rdi,300h
+0x00000FAC: E8 3F FC FF FF          call     fft64_avx (0000000000000BF0h)
+0x00000FB1: 48 81 C7 80 01 00 00    add      rdi,180h
+0x00000FB8: E8 33 FC FF FF          call     fft64_avx (0000000000000BF0h)
+0x00000FBD: 48 81 EF 80 06 00 00    sub      rdi,680h
+0x00000FC4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00000FCB: 00 
+                       R_X86_64_32 ff_cos_256
+0x00000FCC: BA 20 00 00 00          mov      edx,20h
+0x00000FD1: E9 6A F7 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00000FD6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x00000FDD: 00 00 00 
+
+fft512_interleave_avx:
+0x00000FE0: E8 8B FC FF FF          call     fft256_avx (0000000000000C70h)
+0x00000FE5: 48 81 C7 00 06 00 00    add      rdi,600h
+0x00000FEC: E8 3F FC FF FF          call     fft128_avx (0000000000000C30h)
+0x00000FF1: 48 81 C7 00 03 00 00    add      rdi,300h
+0x00000FF8: E8 33 FC FF FF          call     fft128_avx (0000000000000C30h)
+0x00000FFD: 48 81 EF 00 0D 00 00    sub      rdi,0D00h
+0x00001004: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000100B: 00 
+                       R_X86_64_32 ff_cos_512
+0x0000100C: BA 40 00 00 00          mov      edx,40h
+0x00001011: E9 2A F7 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00001016: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000101D: 00 00 00 
+
+fft1024_interleave_avx:
+0x00001020: E8 8B FC FF FF          call     fft512_avx (0000000000000CB0h)
+0x00001025: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x0000102C: E8 3F FC FF FF          call     fft256_avx (0000000000000C70h)
+0x00001031: 48 81 C7 00 06 00 00    add      rdi,600h
+0x00001038: E8 33 FC FF FF          call     fft256_avx (0000000000000C70h)
+0x0000103D: 48 81 EF 00 1A 00 00    sub      rdi,1A00h
+0x00001044: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000104B: 00 
+                       R_X86_64_32 ff_cos_1024
+0x0000104C: BA 80 00 00 00          mov      edx,80h
+0x00001051: E9 EA F6 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00001056: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000105D: 00 00 00 
+
+fft2048_interleave_avx:
+0x00001060: E8 8B FC FF FF          call     fft1024_avx (0000000000000CF0h)
+0x00001065: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x0000106C: E8 3F FC FF FF          call     fft512_avx (0000000000000CB0h)
+0x00001071: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x00001078: E8 33 FC FF FF          call     fft512_avx (0000000000000CB0h)
+0x0000107D: 48 81 EF 00 34 00 00    sub      rdi,3400h
+0x00001084: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000108B: 00 
+                       R_X86_64_32 ff_cos_2048
+0x0000108C: BA 00 01 00 00          mov      edx,100h
+0x00001091: E9 AA F6 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00001096: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000109D: 00 00 00 
+
+fft4096_interleave_avx:
+0x000010A0: E8 8B FC FF FF          call     fft2048_avx (0000000000000D30h)
+0x000010A5: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x000010AC: E8 3F FC FF FF          call     fft1024_avx (0000000000000CF0h)
+0x000010B1: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x000010B8: E8 33 FC FF FF          call     fft1024_avx (0000000000000CF0h)
+0x000010BD: 48 81 EF 00 68 00 00    sub      rdi,6800h
+0x000010C4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000010CB: 00 
+                       R_X86_64_32 ff_cos_4096
+0x000010CC: BA 00 02 00 00          mov      edx,200h
+0x000010D1: E9 6A F6 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x000010D6: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x000010DD: 00 00 00 
+
+fft8192_interleave_avx:
+0x000010E0: E8 8B FC FF FF          call     fft4096_avx (0000000000000D70h)
+0x000010E5: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x000010EC: E8 3F FC FF FF          call     fft2048_avx (0000000000000D30h)
+0x000010F1: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x000010F8: E8 33 FC FF FF          call     fft2048_avx (0000000000000D30h)
+0x000010FD: 48 81 EF 00 D0 00 00    sub      rdi,0D000h
+0x00001104: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000110B: 00 
+                       R_X86_64_32 ff_cos_8192
+0x0000110C: BA 00 04 00 00          mov      edx,400h
+0x00001111: E9 2A F6 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00001116: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000111D: 00 00 00 
+
+fft16384_interleave_avx:
+0x00001120: E8 8B FC FF FF          call     fft8192_avx (0000000000000DB0h)
+0x00001125: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x0000112C: E8 3F FC FF FF          call     fft4096_avx (0000000000000D70h)
+0x00001131: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x00001138: E8 33 FC FF FF          call     fft4096_avx (0000000000000D70h)
+0x0000113D: 48 81 EF 00 A0 01 00    sub      rdi,1A000h
+0x00001144: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000114B: 00 
+                       R_X86_64_32 ff_cos_16384
+0x0000114C: BA 00 08 00 00          mov      edx,800h
+0x00001151: E9 EA F5 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00001156: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000115D: 00 00 00 
+
+fft32768_interleave_avx:
+0x00001160: E8 8B FC FF FF          call     fft16384_avx (0000000000000DF0h)
+0x00001165: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x0000116C: E8 3F FC FF FF          call     fft8192_avx (0000000000000DB0h)
+0x00001171: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x00001178: E8 33 FC FF FF          call     fft8192_avx (0000000000000DB0h)
+0x0000117D: 48 81 EF 00 40 03 00    sub      rdi,34000h
+0x00001184: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000118B: 00 
+                       R_X86_64_32 ff_cos_32768
+0x0000118C: BA 00 10 00 00          mov      edx,1000h
+0x00001191: E9 AA F5 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x00001196: 66 66 0F 1F 84 00 00    nop      word ptr [rax+rax+0]
+0x0000119D: 00 00 00 
+
+fft65536_interleave_avx:
+0x000011A0: E8 8B FC FF FF          call     fft32768_avx (0000000000000E30h)
+0x000011A5: 48 81 C7 00 00 03 00    add      rdi,30000h
+0x000011AC: E8 3F FC FF FF          call     fft16384_avx (0000000000000DF0h)
+0x000011B1: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x000011B8: E8 33 FC FF FF          call     fft16384_avx (0000000000000DF0h)
+0x000011BD: 48 81 EF 00 80 06 00    sub      rdi,68000h
+0x000011C4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000011CB: 00 
+                       R_X86_64_32 ff_cos_65536
+0x000011CC: BA 00 20 00 00          mov      edx,2000h
+0x000011D1: E9 6A F5 FF FF          jmp      pass_interleave_avx (0000000000000740h)
+0x000011D6: 66 90                   nop      
+
+dispatch_tab_interleave_avx:
+0x000011D8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x3A0
+0x000011DA: 00 00                   add      byte ptr [rax],al
+0x000011DC: 00 00                   add      byte ptr [rax],al
+0x000011DE: 00 00                   add      byte ptr [rax],al
+0x000011E0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text
+0x000011E2: 00 00                   add      byte ptr [rax],al
+0x000011E4: 00 00                   add      byte ptr [rax],al
+0x000011E6: 00 00                   add      byte ptr [rax],al
+0x000011E8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x90
+0x000011EA: 00 00                   add      byte ptr [rax],al
+0x000011EC: 00 00                   add      byte ptr [rax],al
+0x000011EE: 00 00                   add      byte ptr [rax],al
+0x000011F0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x353
+0x000011F2: 00 00                   add      byte ptr [rax],al
+0x000011F4: 00 00                   add      byte ptr [rax],al
+0x000011F6: 00 00                   add      byte ptr [rax],al
+0x000011F8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xF20
+0x000011FA: 00 00                   add      byte ptr [rax],al
+0x000011FC: 00 00                   add      byte ptr [rax],al
+0x000011FE: 00 00                   add      byte ptr [rax],al
+0x00001200: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xF60
+0x00001202: 00 00                   add      byte ptr [rax],al
+0x00001204: 00 00                   add      byte ptr [rax],al
+0x00001206: 00 00                   add      byte ptr [rax],al
+0x00001208: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xFA0
+0x0000120A: 00 00                   add      byte ptr [rax],al
+0x0000120C: 00 00                   add      byte ptr [rax],al
+0x0000120E: 00 00                   add      byte ptr [rax],al
+0x00001210: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0xFE0
+0x00001212: 00 00                   add      byte ptr [rax],al
+0x00001214: 00 00                   add      byte ptr [rax],al
+0x00001216: 00 00                   add      byte ptr [rax],al
+0x00001218: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1020
+0x0000121A: 00 00                   add      byte ptr [rax],al
+0x0000121C: 00 00                   add      byte ptr [rax],al
+0x0000121E: 00 00                   add      byte ptr [rax],al
+0x00001220: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1060
+0x00001222: 00 00                   add      byte ptr [rax],al
+0x00001224: 00 00                   add      byte ptr [rax],al
+0x00001226: 00 00                   add      byte ptr [rax],al
+0x00001228: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x10A0
+0x0000122A: 00 00                   add      byte ptr [rax],al
+0x0000122C: 00 00                   add      byte ptr [rax],al
+0x0000122E: 00 00                   add      byte ptr [rax],al
+0x00001230: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x10E0
+0x00001232: 00 00                   add      byte ptr [rax],al
+0x00001234: 00 00                   add      byte ptr [rax],al
+0x00001236: 00 00                   add      byte ptr [rax],al
+0x00001238: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1120
+0x0000123A: 00 00                   add      byte ptr [rax],al
+0x0000123C: 00 00                   add      byte ptr [rax],al
+0x0000123E: 00 00                   add      byte ptr [rax],al
+0x00001240: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1160
+0x00001242: 00 00                   add      byte ptr [rax],al
+0x00001244: 00 00                   add      byte ptr [rax],al
+0x00001246: 00 00                   add      byte ptr [rax],al
+0x00001248: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x11A0
+0x0000124A: 00 00                   add      byte ptr [rax],al
+0x0000124C: 00 00                   add      byte ptr [rax],al
+0x0000124E: 00 00                   add      byte ptr [rax],al
+
+fft32_sse:
+0x00001250: E8 3B F2 FF FF          call     fft16_sse (0000000000000490h)
+0x00001255: 48 83 EF 80             sub      rdi,0FFFFFFFFFFFFFF80h
+0x00001259: E8 82 F1 FF FF          call     fft8_sse (00000000000003E0h)
+0x0000125E: 48 83 C7 40             add      rdi,40h
+0x00001262: E8 79 F1 FF FF          call     fft8_sse (00000000000003E0h)
+0x00001267: 48 81 EF C0 00 00 00    sub      rdi,0C0h
+0x0000126E: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00001275: 00 
+                       R_X86_64_32 ff_cos_32
+0x00001276: BA 04 00 00 00          mov      edx,4
+0x0000127B: E9 50 F6 FF FF          jmp      pass_sse (00000000000008D0h)
+
+fft64_sse:
+0x00001280: E8 CB FF FF FF          call     fft32_sse (0000000000001250h)
+0x00001285: 48 81 C7 C0 00 00 00    add      rdi,0C0h
+0x0000128C: E8 FF F1 FF FF          call     fft16_sse (0000000000000490h)
+0x00001291: 48 83 EF 80             sub      rdi,0FFFFFFFFFFFFFF80h
+0x00001295: E8 F6 F1 FF FF          call     fft16_sse (0000000000000490h)
+0x0000129A: 48 81 EF 80 01 00 00    sub      rdi,180h
+0x000012A1: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000012A8: 00 
+                       R_X86_64_32 ff_cos_64
+0x000012A9: BA 08 00 00 00          mov      edx,8
+0x000012AE: E9 1D F6 FF FF          jmp      pass_sse (00000000000008D0h)
+0x000012B3: 66 66 66 66 2E 0F 1F    nop      word ptr cs:[rax+rax+0]
+0x000012BA: 84 00 00 00 00 00 
+
+fft128_sse:
+0x000012C0: E8 BB FF FF FF          call     fft64_sse (0000000000001280h)
+0x000012C5: 48 81 C7 80 01 00 00    add      rdi,180h
+0x000012CC: E8 7F FF FF FF          call     fft32_sse (0000000000001250h)
+0x000012D1: 48 81 C7 C0 00 00 00    add      rdi,0C0h
+0x000012D8: E8 73 FF FF FF          call     fft32_sse (0000000000001250h)
+0x000012DD: 48 81 EF 40 03 00 00    sub      rdi,340h
+0x000012E4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000012EB: 00 
+                       R_X86_64_32 ff_cos_128
+0x000012EC: BA 10 00 00 00          mov      edx,10h
+0x000012F1: E9 DA F5 FF FF          jmp      pass_sse (00000000000008D0h)
+0x000012F6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000012FD: 00 00 00 
+
+fft256_sse:
+0x00001300: E8 BB FF FF FF          call     fft128_sse (00000000000012C0h)
+0x00001305: 48 81 C7 00 03 00 00    add      rdi,300h
+0x0000130C: E8 6F FF FF FF          call     fft64_sse (0000000000001280h)
+0x00001311: 48 81 C7 80 01 00 00    add      rdi,180h
+0x00001318: E8 63 FF FF FF          call     fft64_sse (0000000000001280h)
+0x0000131D: 48 81 EF 80 06 00 00    sub      rdi,680h
+0x00001324: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000132B: 00 
+                       R_X86_64_32 ff_cos_256
+0x0000132C: BA 20 00 00 00          mov      edx,20h
+0x00001331: E9 9A F5 FF FF          jmp      pass_sse (00000000000008D0h)
+0x00001336: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000133D: 00 00 00 
+
+fft512_sse:
+0x00001340: E8 BB FF FF FF          call     fft256_sse (0000000000001300h)
+0x00001345: 48 81 C7 00 06 00 00    add      rdi,600h
+0x0000134C: E8 6F FF FF FF          call     fft128_sse (00000000000012C0h)
+0x00001351: 48 81 C7 00 03 00 00    add      rdi,300h
+0x00001358: E8 63 FF FF FF          call     fft128_sse (00000000000012C0h)
+0x0000135D: 48 81 EF 00 0D 00 00    sub      rdi,0D00h
+0x00001364: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000136B: 00 
+                       R_X86_64_32 ff_cos_512
+0x0000136C: BA 40 00 00 00          mov      edx,40h
+0x00001371: E9 5A F5 FF FF          jmp      pass_sse (00000000000008D0h)
+0x00001376: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000137D: 00 00 00 
+
+fft1024_sse:
+0x00001380: E8 BB FF FF FF          call     fft512_sse (0000000000001340h)
+0x00001385: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x0000138C: E8 6F FF FF FF          call     fft256_sse (0000000000001300h)
+0x00001391: 48 81 C7 00 06 00 00    add      rdi,600h
+0x00001398: E8 63 FF FF FF          call     fft256_sse (0000000000001300h)
+0x0000139D: 48 81 EF 00 1A 00 00    sub      rdi,1A00h
+0x000013A4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000013AB: 00 
+                       R_X86_64_32 ff_cos_1024
+0x000013AC: BA 80 00 00 00          mov      edx,80h
+0x000013B1: E9 1A F5 FF FF          jmp      pass_sse (00000000000008D0h)
+0x000013B6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000013BD: 00 00 00 
+
+fft2048_sse:
+0x000013C0: E8 BB FF FF FF          call     fft1024_sse (0000000000001380h)
+0x000013C5: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x000013CC: E8 6F FF FF FF          call     fft512_sse (0000000000001340h)
+0x000013D1: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x000013D8: E8 63 FF FF FF          call     fft512_sse (0000000000001340h)
+0x000013DD: 48 81 EF 00 34 00 00    sub      rdi,3400h
+0x000013E4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000013EB: 00 
+                       R_X86_64_32 ff_cos_2048
+0x000013EC: BA 00 01 00 00          mov      edx,100h
+0x000013F1: E9 DA F4 FF FF          jmp      pass_sse (00000000000008D0h)
+0x000013F6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000013FD: 00 00 00 
+
+fft4096_sse:
+0x00001400: E8 BB FF FF FF          call     fft2048_sse (00000000000013C0h)
+0x00001405: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x0000140C: E8 6F FF FF FF          call     fft1024_sse (0000000000001380h)
+0x00001411: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x00001418: E8 63 FF FF FF          call     fft1024_sse (0000000000001380h)
+0x0000141D: 48 81 EF 00 68 00 00    sub      rdi,6800h
+0x00001424: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000142B: 00 
+                       R_X86_64_32 ff_cos_4096
+0x0000142C: BA 00 02 00 00          mov      edx,200h
+0x00001431: E9 9A F4 FF FF          jmp      pass_sse (00000000000008D0h)
+0x00001436: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000143D: 00 00 00 
+
+fft8192_sse:
+0x00001440: E8 BB FF FF FF          call     fft4096_sse (0000000000001400h)
+0x00001445: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x0000144C: E8 6F FF FF FF          call     fft2048_sse (00000000000013C0h)
+0x00001451: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x00001458: E8 63 FF FF FF          call     fft2048_sse (00000000000013C0h)
+0x0000145D: 48 81 EF 00 D0 00 00    sub      rdi,0D000h
+0x00001464: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000146B: 00 
+                       R_X86_64_32 ff_cos_8192
+0x0000146C: BA 00 04 00 00          mov      edx,400h
+0x00001471: E9 5A F4 FF FF          jmp      pass_sse (00000000000008D0h)
+0x00001476: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000147D: 00 00 00 
+
+fft16384_sse:
+0x00001480: E8 BB FF FF FF          call     fft8192_sse (0000000000001440h)
+0x00001485: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x0000148C: E8 6F FF FF FF          call     fft4096_sse (0000000000001400h)
+0x00001491: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x00001498: E8 63 FF FF FF          call     fft4096_sse (0000000000001400h)
+0x0000149D: 48 81 EF 00 A0 01 00    sub      rdi,1A000h
+0x000014A4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000014AB: 00 
+                       R_X86_64_32 ff_cos_16384
+0x000014AC: BA 00 08 00 00          mov      edx,800h
+0x000014B1: E9 1A F4 FF FF          jmp      pass_sse (00000000000008D0h)
+0x000014B6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000014BD: 00 00 00 
+
+fft32768_sse:
+0x000014C0: E8 BB FF FF FF          call     fft16384_sse (0000000000001480h)
+0x000014C5: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x000014CC: E8 6F FF FF FF          call     fft8192_sse (0000000000001440h)
+0x000014D1: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x000014D8: E8 63 FF FF FF          call     fft8192_sse (0000000000001440h)
+0x000014DD: 48 81 EF 00 40 03 00    sub      rdi,34000h
+0x000014E4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000014EB: 00 
+                       R_X86_64_32 ff_cos_32768
+0x000014EC: BA 00 10 00 00          mov      edx,1000h
+0x000014F1: E9 DA F3 FF FF          jmp      pass_sse (00000000000008D0h)
+0x000014F6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000014FD: 00 00 00 
+
+fft65536_sse:
+0x00001500: E8 BB FF FF FF          call     fft32768_sse (00000000000014C0h)
+0x00001505: 48 81 C7 00 00 03 00    add      rdi,30000h
+0x0000150C: E8 6F FF FF FF          call     fft16384_sse (0000000000001480h)
+0x00001511: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x00001518: E8 63 FF FF FF          call     fft16384_sse (0000000000001480h)
+0x0000151D: 48 81 EF 00 80 06 00    sub      rdi,68000h
+0x00001524: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000152B: 00 
+                       R_X86_64_32 ff_cos_65536
+0x0000152C: BA 00 20 00 00          mov      edx,2000h
+0x00001531: E9 9A F3 FF FF          jmp      pass_sse (00000000000008D0h)
+0x00001536: 66 90                   nop      
+
+dispatch_tab_sse:
+0x00001538: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x3A0
+0x0000153A: 00 00                   add      byte ptr [rax],al
+0x0000153C: 00 00                   add      byte ptr [rax],al
+0x0000153E: 00 00                   add      byte ptr [rax],al
+0x00001540: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x3E0
+0x00001542: 00 00                   add      byte ptr [rax],al
+0x00001544: 00 00                   add      byte ptr [rax],al
+0x00001546: 00 00                   add      byte ptr [rax],al
+0x00001548: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x490
+0x0000154A: 00 00                   add      byte ptr [rax],al
+0x0000154C: 00 00                   add      byte ptr [rax],al
+0x0000154E: 00 00                   add      byte ptr [rax],al
+0x00001550: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1250
+0x00001552: 00 00                   add      byte ptr [rax],al
+0x00001554: 00 00                   add      byte ptr [rax],al
+0x00001556: 00 00                   add      byte ptr [rax],al
+0x00001558: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1280
+0x0000155A: 00 00                   add      byte ptr [rax],al
+0x0000155C: 00 00                   add      byte ptr [rax],al
+0x0000155E: 00 00                   add      byte ptr [rax],al
+0x00001560: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x12C0
+0x00001562: 00 00                   add      byte ptr [rax],al
+0x00001564: 00 00                   add      byte ptr [rax],al
+0x00001566: 00 00                   add      byte ptr [rax],al
+0x00001568: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1300
+0x0000156A: 00 00                   add      byte ptr [rax],al
+0x0000156C: 00 00                   add      byte ptr [rax],al
+0x0000156E: 00 00                   add      byte ptr [rax],al
+0x00001570: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1340
+0x00001572: 00 00                   add      byte ptr [rax],al
+0x00001574: 00 00                   add      byte ptr [rax],al
+0x00001576: 00 00                   add      byte ptr [rax],al
+0x00001578: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1380
+0x0000157A: 00 00                   add      byte ptr [rax],al
+0x0000157C: 00 00                   add      byte ptr [rax],al
+0x0000157E: 00 00                   add      byte ptr [rax],al
+0x00001580: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x13C0
+0x00001582: 00 00                   add      byte ptr [rax],al
+0x00001584: 00 00                   add      byte ptr [rax],al
+0x00001586: 00 00                   add      byte ptr [rax],al
+0x00001588: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1400
+0x0000158A: 00 00                   add      byte ptr [rax],al
+0x0000158C: 00 00                   add      byte ptr [rax],al
+0x0000158E: 00 00                   add      byte ptr [rax],al
+0x00001590: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1440
+0x00001592: 00 00                   add      byte ptr [rax],al
+0x00001594: 00 00                   add      byte ptr [rax],al
+0x00001596: 00 00                   add      byte ptr [rax],al
+0x00001598: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1480
+0x0000159A: 00 00                   add      byte ptr [rax],al
+0x0000159C: 00 00                   add      byte ptr [rax],al
+0x0000159E: 00 00                   add      byte ptr [rax],al
+0x000015A0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x14C0
+0x000015A2: 00 00                   add      byte ptr [rax],al
+0x000015A4: 00 00                   add      byte ptr [rax],al
+0x000015A6: 00 00                   add      byte ptr [rax],al
+0x000015A8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1500
+0x000015AA: 00 00                   add      byte ptr [rax],al
+0x000015AC: 00 00                   add      byte ptr [rax],al
+0x000015AE: 00 00                   add      byte ptr [rax],al
+
+fft32_interleave_sse:
+0x000015B0: E8 DB EE FF FF          call     fft16_sse (0000000000000490h)
+0x000015B5: 48 83 EF 80             sub      rdi,0FFFFFFFFFFFFFF80h
+0x000015B9: E8 22 EE FF FF          call     fft8_sse (00000000000003E0h)
+0x000015BE: 48 83 C7 40             add      rdi,40h
+0x000015C2: E8 19 EE FF FF          call     fft8_sse (00000000000003E0h)
+0x000015C7: 48 81 EF C0 00 00 00    sub      rdi,0C0h
+0x000015CE: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000015D5: 00 
+                       R_X86_64_32 ff_cos_32
+0x000015D6: BA 04 00 00 00          mov      edx,4
+0x000015DB: E9 D0 F3 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+
+fft64_interleave_sse:
+0x000015E0: E8 6B FC FF FF          call     fft32_sse (0000000000001250h)
+0x000015E5: 48 81 C7 C0 00 00 00    add      rdi,0C0h
+0x000015EC: E8 9F EE FF FF          call     fft16_sse (0000000000000490h)
+0x000015F1: 48 83 EF 80             sub      rdi,0FFFFFFFFFFFFFF80h
+0x000015F5: E8 96 EE FF FF          call     fft16_sse (0000000000000490h)
+0x000015FA: 48 81 EF 80 01 00 00    sub      rdi,180h
+0x00001601: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x00001608: 00 
+                       R_X86_64_32 ff_cos_64
+0x00001609: BA 08 00 00 00          mov      edx,8
+0x0000160E: E9 9D F3 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001613: 66 66 66 66 2E 0F 1F    nop      word ptr cs:[rax+rax+0]
+0x0000161A: 84 00 00 00 00 00 
+
+fft128_interleave_sse:
+0x00001620: E8 5B FC FF FF          call     fft64_sse (0000000000001280h)
+0x00001625: 48 81 C7 80 01 00 00    add      rdi,180h
+0x0000162C: E8 1F FC FF FF          call     fft32_sse (0000000000001250h)
+0x00001631: 48 81 C7 C0 00 00 00    add      rdi,0C0h
+0x00001638: E8 13 FC FF FF          call     fft32_sse (0000000000001250h)
+0x0000163D: 48 81 EF 40 03 00 00    sub      rdi,340h
+0x00001644: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000164B: 00 
+                       R_X86_64_32 ff_cos_128
+0x0000164C: BA 10 00 00 00          mov      edx,10h
+0x00001651: E9 5A F3 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001656: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000165D: 00 00 00 
+
+fft256_interleave_sse:
+0x00001660: E8 5B FC FF FF          call     fft128_sse (00000000000012C0h)
+0x00001665: 48 81 C7 00 03 00 00    add      rdi,300h
+0x0000166C: E8 0F FC FF FF          call     fft64_sse (0000000000001280h)
+0x00001671: 48 81 C7 80 01 00 00    add      rdi,180h
+0x00001678: E8 03 FC FF FF          call     fft64_sse (0000000000001280h)
+0x0000167D: 48 81 EF 80 06 00 00    sub      rdi,680h
+0x00001684: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000168B: 00 
+                       R_X86_64_32 ff_cos_256
+0x0000168C: BA 20 00 00 00          mov      edx,20h
+0x00001691: E9 1A F3 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001696: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000169D: 00 00 00 
+
+fft512_interleave_sse:
+0x000016A0: E8 5B FC FF FF          call     fft256_sse (0000000000001300h)
+0x000016A5: 48 81 C7 00 06 00 00    add      rdi,600h
+0x000016AC: E8 0F FC FF FF          call     fft128_sse (00000000000012C0h)
+0x000016B1: 48 81 C7 00 03 00 00    add      rdi,300h
+0x000016B8: E8 03 FC FF FF          call     fft128_sse (00000000000012C0h)
+0x000016BD: 48 81 EF 00 0D 00 00    sub      rdi,0D00h
+0x000016C4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000016CB: 00 
+                       R_X86_64_32 ff_cos_512
+0x000016CC: BA 40 00 00 00          mov      edx,40h
+0x000016D1: E9 DA F2 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x000016D6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000016DD: 00 00 00 
+
+fft1024_interleave_sse:
+0x000016E0: E8 5B FC FF FF          call     fft512_sse (0000000000001340h)
+0x000016E5: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x000016EC: E8 0F FC FF FF          call     fft256_sse (0000000000001300h)
+0x000016F1: 48 81 C7 00 06 00 00    add      rdi,600h
+0x000016F8: E8 03 FC FF FF          call     fft256_sse (0000000000001300h)
+0x000016FD: 48 81 EF 00 1A 00 00    sub      rdi,1A00h
+0x00001704: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000170B: 00 
+                       R_X86_64_32 ff_cos_1024
+0x0000170C: BA 80 00 00 00          mov      edx,80h
+0x00001711: E9 9A F2 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001716: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000171D: 00 00 00 
+
+fft2048_interleave_sse:
+0x00001720: E8 5B FC FF FF          call     fft1024_sse (0000000000001380h)
+0x00001725: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x0000172C: E8 0F FC FF FF          call     fft512_sse (0000000000001340h)
+0x00001731: 48 81 C7 00 0C 00 00    add      rdi,0C00h
+0x00001738: E8 03 FC FF FF          call     fft512_sse (0000000000001340h)
+0x0000173D: 48 81 EF 00 34 00 00    sub      rdi,3400h
+0x00001744: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000174B: 00 
+                       R_X86_64_32 ff_cos_2048
+0x0000174C: BA 00 01 00 00          mov      edx,100h
+0x00001751: E9 5A F2 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001756: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000175D: 00 00 00 
+
+fft4096_interleave_sse:
+0x00001760: E8 5B FC FF FF          call     fft2048_sse (00000000000013C0h)
+0x00001765: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x0000176C: E8 0F FC FF FF          call     fft1024_sse (0000000000001380h)
+0x00001771: 48 81 C7 00 18 00 00    add      rdi,1800h
+0x00001778: E8 03 FC FF FF          call     fft1024_sse (0000000000001380h)
+0x0000177D: 48 81 EF 00 68 00 00    sub      rdi,6800h
+0x00001784: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000178B: 00 
+                       R_X86_64_32 ff_cos_4096
+0x0000178C: BA 00 02 00 00          mov      edx,200h
+0x00001791: E9 1A F2 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001796: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000179D: 00 00 00 
+
+fft8192_interleave_sse:
+0x000017A0: E8 5B FC FF FF          call     fft4096_sse (0000000000001400h)
+0x000017A5: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x000017AC: E8 0F FC FF FF          call     fft2048_sse (00000000000013C0h)
+0x000017B1: 48 81 C7 00 30 00 00    add      rdi,3000h
+0x000017B8: E8 03 FC FF FF          call     fft2048_sse (00000000000013C0h)
+0x000017BD: 48 81 EF 00 D0 00 00    sub      rdi,0D000h
+0x000017C4: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x000017CB: 00 
+                       R_X86_64_32 ff_cos_8192
+0x000017CC: BA 00 04 00 00          mov      edx,400h
+0x000017D1: E9 DA F1 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x000017D6: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x000017DD: 00 00 00 
+
+fft16384_interleave_sse:
+0x000017E0: E8 5B FC FF FF          call     fft8192_sse (0000000000001440h)
+0x000017E5: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x000017EC: E8 0F FC FF FF          call     fft4096_sse (0000000000001400h)
+0x000017F1: 48 81 C7 00 60 00 00    add      rdi,6000h
+0x000017F8: E8 03 FC FF FF          call     fft4096_sse (0000000000001400h)
+0x000017FD: 48 81 EF 00 A0 01 00    sub      rdi,1A000h
+0x00001804: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000180B: 00 
+                       R_X86_64_32 ff_cos_16384
+0x0000180C: BA 00 08 00 00          mov      edx,800h
+0x00001811: E9 9A F1 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001816: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000181D: 00 00 00 
+
+fft32768_interleave_sse:
+0x00001820: E8 5B FC FF FF          call     fft16384_sse (0000000000001480h)
+0x00001825: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x0000182C: E8 0F FC FF FF          call     fft8192_sse (0000000000001440h)
+0x00001831: 48 81 C7 00 C0 00 00    add      rdi,0C000h
+0x00001838: E8 03 FC FF FF          call     fft8192_sse (0000000000001440h)
+0x0000183D: 48 81 EF 00 40 03 00    sub      rdi,34000h
+0x00001844: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000184B: 00 
+                       R_X86_64_32 ff_cos_32768
+0x0000184C: BA 00 10 00 00          mov      edx,1000h
+0x00001851: E9 5A F1 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001856: 66 2E 0F 1F 84 00 00    nop      word ptr cs:[rax+rax+0]
+0x0000185D: 00 00 00 
+
+fft65536_interleave_sse:
+0x00001860: E8 5B FC FF FF          call     fft32768_sse (00000000000014C0h)
+0x00001865: 48 81 C7 00 00 03 00    add      rdi,30000h
+0x0000186C: E8 0F FC FF FF          call     fft16384_sse (0000000000001480h)
+0x00001871: 48 81 C7 00 80 01 00    add      rdi,18000h
+0x00001878: E8 03 FC FF FF          call     fft16384_sse (0000000000001480h)
+0x0000187D: 48 81 EF 00 80 06 00    sub      rdi,68000h
+0x00001884: 48 8D 34 25 00 00 00    lea      rsi,[fft8_avx (0000000000000000h)]
+0x0000188B: 00 
+                       R_X86_64_32 ff_cos_65536
+0x0000188C: BA 00 20 00 00          mov      edx,2000h
+0x00001891: E9 1A F1 FF FF          jmp      pass_interleave_sse (00000000000009B0h)
+0x00001896: 66 90                   nop      
+
+dispatch_tab_interleave_sse:
+0x00001898: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x3A0
+0x0000189A: 00 00                   add      byte ptr [rax],al
+0x0000189C: 00 00                   add      byte ptr [rax],al
+0x0000189E: 00 00                   add      byte ptr [rax],al
+0x000018A0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x3E0
+0x000018A2: 00 00                   add      byte ptr [rax],al
+0x000018A4: 00 00                   add      byte ptr [rax],al
+0x000018A6: 00 00                   add      byte ptr [rax],al
+0x000018A8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x490
+0x000018AA: 00 00                   add      byte ptr [rax],al
+0x000018AC: 00 00                   add      byte ptr [rax],al
+0x000018AE: 00 00                   add      byte ptr [rax],al
+0x000018B0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x15B0
+0x000018B2: 00 00                   add      byte ptr [rax],al
+0x000018B4: 00 00                   add      byte ptr [rax],al
+0x000018B6: 00 00                   add      byte ptr [rax],al
+0x000018B8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x15E0
+0x000018BA: 00 00                   add      byte ptr [rax],al
+0x000018BC: 00 00                   add      byte ptr [rax],al
+0x000018BE: 00 00                   add      byte ptr [rax],al
+0x000018C0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1620
+0x000018C2: 00 00                   add      byte ptr [rax],al
+0x000018C4: 00 00                   add      byte ptr [rax],al
+0x000018C6: 00 00                   add      byte ptr [rax],al
+0x000018C8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1660
+0x000018CA: 00 00                   add      byte ptr [rax],al
+0x000018CC: 00 00                   add      byte ptr [rax],al
+0x000018CE: 00 00                   add      byte ptr [rax],al
+0x000018D0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x16A0
+0x000018D2: 00 00                   add      byte ptr [rax],al
+0x000018D4: 00 00                   add      byte ptr [rax],al
+0x000018D6: 00 00                   add      byte ptr [rax],al
+0x000018D8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x16E0
+0x000018DA: 00 00                   add      byte ptr [rax],al
+0x000018DC: 00 00                   add      byte ptr [rax],al
+0x000018DE: 00 00                   add      byte ptr [rax],al
+0x000018E0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1720
+0x000018E2: 00 00                   add      byte ptr [rax],al
+0x000018E4: 00 00                   add      byte ptr [rax],al
+0x000018E6: 00 00                   add      byte ptr [rax],al
+0x000018E8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1760
+0x000018EA: 00 00                   add      byte ptr [rax],al
+0x000018EC: 00 00                   add      byte ptr [rax],al
+0x000018EE: 00 00                   add      byte ptr [rax],al
+0x000018F0: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x17A0
+0x000018F2: 00 00                   add      byte ptr [rax],al
+0x000018F4: 00 00                   add      byte ptr [rax],al
+0x000018F6: 00 00                   add      byte ptr [rax],al
+0x000018F8: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x17E0
+0x000018FA: 00 00                   add      byte ptr [rax],al
+0x000018FC: 00 00                   add      byte ptr [rax],al
+0x000018FE: 00 00                   add      byte ptr [rax],al
+0x00001900: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1820
+0x00001902: 00 00                   add      byte ptr [rax],al
+0x00001904: 00 00                   add      byte ptr [rax],al
+0x00001906: 00 00                   add      byte ptr [rax],al
+0x00001908: 00 00                   add      byte ptr [rax],al
+                       R_X86_64_64 .text+0x1860
+0x0000190A: 00 00                   add      byte ptr [rax],al
+0x0000190C: 00 00                   add      byte ptr [rax],al
+0x0000190E: 00 00                   add      byte ptr [rax],al
+
+ff_imdct_half_sse:
+0x00001910: 53                      push     rbx
+0x00001911: 55                      push     rbp
+0x00001912: 41 54                   push     r12
+0x00001914: 8B 4F 18                mov      ecx,dword ptr [rdi+18h]
+0x00001917: 48 01 CA                add      rdx,rcx
+0x0000191A: 48 D1 E9                shr      rcx,1
+0x0000191D: 4C 8B 5F 20             mov      r11,qword ptr [rdi+20h]
+0x00001921: 48 8B 5F 28             mov      rbx,qword ptr [rdi+28h]
+0x00001925: 49 01 CB                add      r11,rcx
+0x00001928: 48 01 CB                add      rbx,rcx
+0x0000192B: 48 D1 E9                shr      rcx,1
+0x0000192E: 4C 8B 57 08             mov      r10,qword ptr [rdi+8]
+0x00001932: 49 01 CA                add      r10,rcx
+0x00001935: 48 83 E9 04             sub      rcx,4
+0x00001939: 4D 31 C0                xor      r8,r8
+0x0000193C: 49 29 C8                sub      r8,rcx
+
+ff_imdct_half_sse.pre:
+0x0000193F: 0F 28 04 8A             movaps   xmm0,xmmword ptr [rdx+rcx*4]
+0x00001943: 42 0F 28 4C 82 F0       movaps   xmm1,xmmword ptr [rdx+r8*4-10h]
+0x00001949: 0F 28 D0                movaps   xmm2,xmm0
+0x0000194C: 0F C6 C1 88             shufps   xmm0,xmm1,88h
+0x00001950: 0F C6 CA 77             shufps   xmm1,xmm2,77h
+0x00001954: 41 0F 12 24 4B          movlps   xmm4,qword ptr [r11+rcx*2]
+0x00001959: 0F 12 2C 4B             movlps   xmm5,qword ptr [rbx+rcx*2]
+0x0000195D: 43 0F 16 64 43 F8       movhps   xmm4,qword ptr [r11+r8*2-8]
+0x00001963: 42 0F 16 6C 43 F8       movhps   xmm5,qword ptr [rbx+r8*2-8]
+0x00001969: 0F 28 D0                movaps   xmm2,xmm0
+0x0000196C: 0F 28 D9                movaps   xmm3,xmm1
+0x0000196F: 0F 59 C5                mulps    xmm0,xmm5
+0x00001972: 0F 59 CC                mulps    xmm1,xmm4
+0x00001975: 0F 59 D4                mulps    xmm2,xmm4
+0x00001978: 0F 59 DD                mulps    xmm3,xmm5
+0x0000197B: 0F 5C C8                subps    xmm1,xmm0
+0x0000197E: 0F 58 D3                addps    xmm2,xmm3
+0x00001981: 0F 28 C1                movaps   xmm0,xmm1
+0x00001984: 0F 14 CA                unpcklps xmm1,xmm2
+0x00001987: 0F 15 C2                unpckhps xmm0,xmm2
+0x0000198A: 4F 0F B7 4C 02 FC       movzx    r9,word ptr [r10+r8-4]
+0x00001990: 4B 0F B7 44 02 FE       movzx    rax,word ptr [r10+r8-2]
+0x00001996: 49 0F B7 2C 0A          movzx    rbp,word ptr [r10+rcx]
+0x0000199B: 4D 0F B7 64 0A 02       movzx    r12,word ptr [r10+rcx+2]
+0x000019A1: 42 0F 13 04 CE          movlps   qword ptr [rsi+r9*8],xmm0
+0x000019A6: 0F 17 04 C6             movhps   qword ptr [rsi+rax*8],xmm0
+0x000019AA: 0F 13 0C EE             movlps   qword ptr [rsi+rbp*8],xmm1
+0x000019AE: 42 0F 17 0C E6          movhps   qword ptr [rsi+r12*8],xmm1
+0x000019B3: 49 83 C0 04             add      r8,4
+0x000019B7: 48 83 E9 04             sub      rcx,4
+0x000019BB: 79 82                   jns      ff_imdct_half_sse.pre (000000000000193Fh)
+0x000019BD: 49 89 F9                mov      r9,rdi
+0x000019C0: 48 89 F0                mov      rax,rsi
+0x000019C3: 48 89 F7                mov      rdi,rsi
+0x000019C6: 41 8B 31                mov      esi,dword ptr [r9]
+0x000019C9: 48 8D 14 25 00 00 00    lea      rdx,[fft8_avx (0000000000000000h)]
+0x000019D0: 00 
+                       R_X86_64_32 .text+0x1538
+0x000019D1: 48 8B 54 F2 F0          mov      rdx,qword ptr [rdx+rsi*8-10h]
+0x000019D6: FF D2                   call     rdx
+0x000019D8: 41 8B 79 18             mov      edi,dword ptr [r9+18h]
+0x000019DC: 48 01 F8                add      rax,rdi
+0x000019DF: 48 D1 EF                shr      rdi,1
+0x000019E2: 48 F7 DF                neg      rdi
+0x000019E5: 48 C7 C6 F0 FF FF FF    mov      rsi,0FFFFFFF0h
+0x000019EC: 48 29 FE                sub      rsi,rdi
+
+ff_imdct_half_sse.post:
+0x000019EF: 0F 28 0C 78             movaps   xmm1,xmmword ptr [rax+rdi*2]
+0x000019F3: 0F 28 44 78 10          movaps   xmm0,xmmword ptr [rax+rdi*2+10h]
+0x000019F8: 41 0F 28 34 3B          movaps   xmm6,xmmword ptr [r11+rdi]
+0x000019FD: 0F 59 F1                mulps    xmm6,xmm1
+0x00001A00: 41 0F 28 3C 3B          movaps   xmm7,xmmword ptr [r11+rdi]
+0x00001A05: 0F 59 F8                mulps    xmm7,xmm0
+0x00001A08: 0F 59 04 3B             mulps    xmm0,xmmword ptr [rbx+rdi]
+0x00001A0C: 0F 59 0C 3B             mulps    xmm1,xmmword ptr [rbx+rdi]
+0x00001A10: 0F 5C C6                subps    xmm0,xmm6
+0x00001A13: 0F 58 CF                addps    xmm1,xmm7
+0x00001A16: 0F 28 2C 70             movaps   xmm5,xmmword ptr [rax+rsi*2]
+0x00001A1A: 0F 28 64 70 10          movaps   xmm4,xmmword ptr [rax+rsi*2+10h]
+0x00001A1F: 41 0F 28 34 33          movaps   xmm6,xmmword ptr [r11+rsi]
+0x00001A24: 0F 59 F5                mulps    xmm6,xmm5
+0x00001A27: 41 0F 28 3C 33          movaps   xmm7,xmmword ptr [r11+rsi]
+0x00001A2C: 0F 59 FC                mulps    xmm7,xmm4
+0x00001A2F: 0F 59 24 33             mulps    xmm4,xmmword ptr [rbx+rsi]
+0x00001A33: 0F 59 2C 33             mulps    xmm5,xmmword ptr [rbx+rsi]
+0x00001A37: 0F 5C E6                subps    xmm4,xmm6
+0x00001A3A: 0F 58 EF                addps    xmm5,xmm7
+0x00001A3D: 0F C6 C9 1B             shufps   xmm1,xmm1,1Bh
+0x00001A41: 0F C6 ED 1B             shufps   xmm5,xmm5,1Bh
+0x00001A45: 0F 28 F4                movaps   xmm6,xmm4
+0x00001A48: 0F 15 E1                unpckhps xmm4,xmm1
+0x00001A4B: 0F 14 F1                unpcklps xmm6,xmm1
+0x00001A4E: 0F 28 D0                movaps   xmm2,xmm0
+0x00001A51: 0F 14 C5                unpcklps xmm0,xmm5
+0x00001A54: 0F 15 D5                unpckhps xmm2,xmm5
+0x00001A57: 0F 29 34 70             movaps   xmmword ptr [rax+rsi*2],xmm6
+0x00001A5B: 0F 29 64 70 10          movaps   xmmword ptr [rax+rsi*2+10h],xmm4
+0x00001A60: 0F 29 04 78             movaps   xmmword ptr [rax+rdi*2],xmm0
+0x00001A64: 0F 29 54 78 10          movaps   xmmword ptr [rax+rdi*2+10h],xmm2
+0x00001A69: 48 83 EE 10             sub      rsi,10h
+0x00001A6D: 48 83 C7 10             add      rdi,10h
+0x00001A71: 0F 8C 78 FF FF FF       jl       ff_imdct_half_sse.post (00000000000019EFh)
+0x00001A77: 41 5C                   pop      r12
+0x00001A79: 5D                      pop      rbp
+0x00001A7A: 5B                      pop      rbx
+0x00001A7B: C3                      ret      
+0x00001A7C: 0F 1F 40 00             nop      dword ptr [rax+0]
+
+ff_imdct_half_avx:
+0x00001A80: 53                      push     rbx
+0x00001A81: 55                      push     rbp
+0x00001A82: 41 54                   push     r12
+0x00001A84: 8B 4F 18                mov      ecx,dword ptr [rdi+18h]
+0x00001A87: 48 01 CA                add      rdx,rcx
+0x00001A8A: 48 D1 E9                shr      rcx,1
+0x00001A8D: 4C 8B 5F 20             mov      r11,qword ptr [rdi+20h]
+0x00001A91: 48 8B 5F 28             mov      rbx,qword ptr [rdi+28h]
+0x00001A95: 49 01 CB                add      r11,rcx
+0x00001A98: 48 01 CB                add      rbx,rcx
+0x00001A9B: 48 D1 E9                shr      rcx,1
+0x00001A9E: 4C 8B 57 08             mov      r10,qword ptr [rdi+8]
+0x00001AA2: 49 01 CA                add      r10,rcx
+0x00001AA5: 48 83 E9 04             sub      rcx,4
+0x00001AA9: 4D 31 C0                xor      r8,r8
+0x00001AAC: 49 29 C8                sub      r8,rcx
+
+ff_imdct_half_avx.pre:
+0x00001AAF: C5 F8 28 04 8A          vmovaps  xmm0,xmmword ptr [rdx+rcx*4]
+0x00001AB4: C4 A1 78 28 4C 82 F0    vmovaps  xmm1,xmmword ptr [rdx+r8*4-10h]
+0x00001ABB: C5 F8 28 D0             vmovaps  xmm2,xmm0
+0x00001ABF: C5 F8 C6 C1 88          vshufps  xmm0,xmm0,xmm1,88h
+0x00001AC4: C5 F0 C6 CA 77          vshufps  xmm1,xmm1,xmm2,77h
+0x00001AC9: C4 C1 58 12 24 4B       vmovlps  xmm4,xmm4,qword ptr [r11+rcx*2]
+0x00001ACF: C5 D0 12 2C 4B          vmovlps  xmm5,xmm5,qword ptr [rbx+rcx*2]
+0x00001AD4: C4 81 58 16 64 43 F8    vmovhps  xmm4,xmm4,qword ptr [r11+r8*2-8]
+0x00001ADB: C4 A1 50 16 6C 43 F8    vmovhps  xmm5,xmm5,qword ptr [rbx+r8*2-8]
+0x00001AE2: C5 F8 28 D0             vmovaps  xmm2,xmm0
+0x00001AE6: C5 F8 28 D9             vmovaps  xmm3,xmm1
+0x00001AEA: C5 F8 59 C5             vmulps   xmm0,xmm0,xmm5
+0x00001AEE: C5 F0 59 CC             vmulps   xmm1,xmm1,xmm4
+0x00001AF2: C5 E8 59 D4             vmulps   xmm2,xmm2,xmm4
+0x00001AF6: C5 E0 59 DD             vmulps   xmm3,xmm3,xmm5
+0x00001AFA: C5 F0 5C C8             vsubps   xmm1,xmm1,xmm0
+0x00001AFE: C5 E8 58 D3             vaddps   xmm2,xmm2,xmm3
+0x00001B02: C5 F8 28 C1             vmovaps  xmm0,xmm1
+0x00001B06: C5 F0 14 CA             vunpcklps xmm1,xmm1,xmm2
+0x00001B0A: C5 F8 15 C2             vunpckhps xmm0,xmm0,xmm2
+0x00001B0E: 4F 0F B7 4C 02 FC       movzx    r9,word ptr [r10+r8-4]
+0x00001B14: 4B 0F B7 44 02 FE       movzx    rax,word ptr [r10+r8-2]
+0x00001B1A: 49 0F B7 2C 0A          movzx    rbp,word ptr [r10+rcx]
+0x00001B1F: 4D 0F B7 64 0A 02       movzx    r12,word ptr [r10+rcx+2]
+0x00001B25: C4 A1 78 13 04 CE       vmovlps  qword ptr [rsi+r9*8],xmm0
+0x00001B2B: C5 F8 17 04 C6          vmovhps  qword ptr [rsi+rax*8],xmm0
+0x00001B30: C5 F8 13 0C EE          vmovlps  qword ptr [rsi+rbp*8],xmm1
+0x00001B35: C4 A1 78 17 0C E6       vmovhps  qword ptr [rsi+r12*8],xmm1
+0x00001B3B: 49 83 C0 04             add      r8,4
+0x00001B3F: 48 83 E9 04             sub      rcx,4
+0x00001B43: 0F 89 66 FF FF FF       jns      ff_imdct_half_avx.pre (0000000000001AAFh)
+0x00001B49: 49 89 F9                mov      r9,rdi
+0x00001B4C: 48 89 F0                mov      rax,rsi
+0x00001B4F: 48 89 F7                mov      rdi,rsi
+0x00001B52: 41 8B 31                mov      esi,dword ptr [r9]
+0x00001B55: 48 8D 14 25 00 00 00    lea      rdx,[fft8_avx (0000000000000000h)]
+0x00001B5C: 00 
+                       R_X86_64_32 .text+0xEA8
+0x00001B5D: 48 8B 54 F2 F0          mov      rdx,qword ptr [rdx+rsi*8-10h]
+0x00001B62: FF D2                   call     rdx
+0x00001B64: 41 8B 79 18             mov      edi,dword ptr [r9+18h]
+0x00001B68: 48 01 F8                add      rax,rdi
+0x00001B6B: 48 D1 EF                shr      rdi,1
+0x00001B6E: 48 F7 DF                neg      rdi
+0x00001B71: 48 C7 C6 E0 FF FF FF    mov      rsi,0FFFFFFE0h
+0x00001B78: 48 29 FE                sub      rsi,rdi
+
+ff_imdct_half_avx.post:
+0x00001B7B: C5 FC 28 0C 78          vmovaps  ymm1,ymmword ptr [rax+rdi*2]
+0x00001B80: C5 FC 28 44 78 20       vmovaps  ymm0,ymmword ptr [rax+rdi*2+20h]
+0x00001B86: C5 FC 28 1C 70          vmovaps  ymm3,ymmword ptr [rax+rsi*2]
+0x00001B8B: C5 FC 28 54 70 20       vmovaps  ymm2,ymmword ptr [rax+rsi*2+20h]
+0x00001B91: C4 C1 74 59 34 3B       vmulps   ymm6,ymm1,ymmword ptr [r11+rdi]
+0x00001B97: C4 C1 7C 59 3C 3B       vmulps   ymm7,ymm0,ymmword ptr [r11+rdi]
+0x00001B9D: C5 FC 59 04 3B          vmulps   ymm0,ymm0,ymmword ptr [rbx+rdi]
+0x00001BA2: C5 F4 59 0C 3B          vmulps   ymm1,ymm1,ymmword ptr [rbx+rdi]
+0x00001BA7: C5 FC 5C C6             vsubps   ymm0,ymm0,ymm6
+0x00001BAB: C5 F4 58 CF             vaddps   ymm1,ymm1,ymm7
+0x00001BAF: C4 C1 64 59 34 33       vmulps   ymm6,ymm3,ymmword ptr [r11+rsi]
+0x00001BB5: C4 C1 6C 59 3C 33       vmulps   ymm7,ymm2,ymmword ptr [r11+rsi]
+0x00001BBB: C5 EC 59 14 33          vmulps   ymm2,ymm2,ymmword ptr [rbx+rsi]
+0x00001BC0: C5 E4 59 1C 33          vmulps   ymm3,ymm3,ymmword ptr [rbx+rsi]
+0x00001BC5: C5 EC 5C D6             vsubps   ymm2,ymm2,ymm6
+0x00001BC9: C5 E4 58 DF             vaddps   ymm3,ymm3,ymm7
+0x00001BCD: C5 F4 C6 C9 1B          vshufps  ymm1,ymm1,ymm1,1Bh
+0x00001BD2: C5 E4 C6 DB 1B          vshufps  ymm3,ymm3,ymm3,1Bh
+0x00001BD7: C4 E3 75 06 C9 01       vperm2f128 ymm1,ymm1,ymm1,1
+0x00001BDD: C4 E3 65 06 DB 01       vperm2f128 ymm3,ymm3,ymm3,1
+0x00001BE3: C5 EC 14 F1             vunpcklps ymm6,ymm2,ymm1
+0x00001BE7: C5 EC 15 E1             vunpckhps ymm4,ymm2,ymm1
+0x00001BEB: C5 FC 14 FB             vunpcklps ymm7,ymm0,ymm3
+0x00001BEF: C5 FC 15 EB             vunpckhps ymm5,ymm0,ymm3
+0x00001BF3: C4 E3 7D 19 3C 78 00    vextractf128 xmmword ptr [rax+rdi*2],ymm7,0
+0x00001BFA: C4 E3 7D 19 6C 78 10    vextractf128 xmmword ptr [rax+rdi*2+10h],ymm5,0
+0x00001C01: 00 
+0x00001C02: C4 E3 7D 19 7C 78 20    vextractf128 xmmword ptr [rax+rdi*2+20h],ymm7,1
+0x00001C09: 01 
+0x00001C0A: C4 E3 7D 19 6C 78 30    vextractf128 xmmword ptr [rax+rdi*2+30h],ymm5,1
+0x00001C11: 01 
+0x00001C12: C4 E3 7D 19 34 70 00    vextractf128 xmmword ptr [rax+rsi*2],ymm6,0
+0x00001C19: C4 E3 7D 19 64 70 10    vextractf128 xmmword ptr [rax+rsi*2+10h],ymm4,0
+0x00001C20: 00 
+0x00001C21: C4 E3 7D 19 74 70 20    vextractf128 xmmword ptr [rax+rsi*2+20h],ymm6,1
+0x00001C28: 01 
+0x00001C29: C4 E3 7D 19 64 70 30    vextractf128 xmmword ptr [rax+rsi*2+30h],ymm4,1
+0x00001C30: 01 
+0x00001C31: 48 83 EE 20             sub      rsi,20h
+0x00001C35: 48 83 C7 20             add      rdi,20h
+0x00001C39: 0F 8C 3C FF FF FF       jl       ff_imdct_half_avx.post (0000000000001B7Bh)
+0x00001C3F: 41 5C                   pop      r12
+0x00001C41: 5D                      pop      rbp
+0x00001C42: 5B                      pop      rbx
+0x00001C43: C5 F8 77                vzeroupper 
+0x00001C46: C3                      ret      
+
