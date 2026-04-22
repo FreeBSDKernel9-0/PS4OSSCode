@@ -1,0 +1,4 @@
+partial interface DOMWindow {
+    [Conditional=MANX_HTMLTILE] attribute HTMLTileConstructor HTMLTile;
+    [Conditional=MANX_HTMLTILE] attribute LocationChangeEventConstructor LocationChangeEvent;
+};

@@ -1,0 +1,7 @@
+JSSVGImageElement.h : SVGURIReference.idl SVGTests.idl SVGLangSpace.idl SVGExternalResourcesRequired.idl SVGTransformable.idl SVGLocatable.idl
+SVGURIReference.idl :
+SVGTests.idl :
+SVGLangSpace.idl :
+SVGExternalResourcesRequired.idl :
+SVGTransformable.idl :
+SVGLocatable.idl :

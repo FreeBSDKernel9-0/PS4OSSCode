@@ -1,21 +1,25 @@
-# PS4 Open Source Software
+# PlayStation 4 Open Source Software - Massive Collection
 
-So yeah, this is an archive of literally all of the OSS code for the PS4, and if my writing's a mess, it's cause my eyes are blurry AF.
+This archive contains a consolidated collection of open-source software source code used in the PlayStation 4 (Orbis OS).
 
-## This archive contains:
+## Contents
 
-## All the OSS code Sony hosts:
+### 1. Sony-Hosted Source Code (`/sony_hosted`)
+These are the files directly provided by Sony Interactive Entertainment on their official OSS portal.
+- **WebKit**: Multiple versions for different system firmware.
+- **FFmpeg**: The specific version used by Sony.
+- **Other Libraries**: Various small components hosted by Sony.
 
-So all their, like, stuff that they list on the 'OSS Info' page: https://doc.dl.playstation.net/doc/ps4-oss/index.html .
+### 2. External Source Code (`/external`)
+These are the source codes for major components that Sony uses but does not host directly. These have been fetched from official archives based on the versions used in the PS4.
+- **FreeBSD 9.0 Kernel & Userland**: The foundation of Orbis OS.
+- **Lua 5.2.4**: Scripting engine.
+- **OpenSSL 1.0.1**: Cryptography library.
+- **zlib 1.2.8**: Compression library.
+- **SQLite 3.7.17**: Database engine.
 
-## Software made by other devs for the PS4 that they host themselves:
+### 3. Documentation (`/docs`)
+- **OSS Notices**: License information and acknowledgments.
 
-So stuff like WebKit, FreeBSD (which Orbis OS is based on.) and other things, like, drivers, apps that come with the PS4, etc.
-
-## Open Source libraries used on the PS4 that are hosted publically by their respective owners: 
-
-So stuff like Lua, JavaScriptCore, C/C++ libraries for the console and WebKit, and Ffmpeg (which interestingly, Sony doesn't mention on the OSS page in the PS4 Settings.) Strange, but I'll go with it.
-
-## Disclaimer: These are all open-source, publically hosted by the respective devs, and have licenses such as the Apache 2.0 GNU license (which I also use, by the way) that allow these to be hosted.
-
-## That's all for now, FreeBSDKernel9-0.
+## Disclaimer
+This collection is for educational and research purposes. All software is subject to its respective original licenses (GPL, LGPL, BSD, MIT, etc.). Sony's modifications to the FreeBSD kernel are proprietary and are NOT included in the standard FreeBSD source code provided here.

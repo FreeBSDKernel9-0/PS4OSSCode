@@ -1,0 +1,6 @@
+JSSVGSwitchElement.h : SVGTests.idl SVGLangSpace.idl SVGExternalResourcesRequired.idl SVGTransformable.idl SVGLocatable.idl
+SVGTests.idl :
+SVGLangSpace.idl :
+SVGExternalResourcesRequired.idl :
+SVGTransformable.idl :
+SVGLocatable.idl :

@@ -1,0 +1,4 @@
+JSSVGTextContentElement.h : SVGTests.idl SVGLangSpace.idl SVGExternalResourcesRequired.idl
+SVGTests.idl :
+SVGLangSpace.idl :
+SVGExternalResourcesRequired.idl :

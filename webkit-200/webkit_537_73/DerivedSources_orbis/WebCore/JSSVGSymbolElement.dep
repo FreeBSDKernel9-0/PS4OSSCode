@@ -1,0 +1,4 @@
+JSSVGSymbolElement.h : SVGLangSpace.idl SVGExternalResourcesRequired.idl SVGFitToViewBox.idl
+SVGLangSpace.idl :
+SVGExternalResourcesRequired.idl :
+SVGFitToViewBox.idl :

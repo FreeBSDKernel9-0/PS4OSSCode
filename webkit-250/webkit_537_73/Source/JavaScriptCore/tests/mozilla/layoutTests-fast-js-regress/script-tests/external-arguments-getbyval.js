@@ -1,0 +1,18 @@
+function foo(args)
+{
+    var result = 0;
+    for (var i = 0; i < args.length; ++i)
+        result += args[i];
+    return result;
+}
+
+function bar()
+{
+    return foo(arguments);
+}
+
+var result = 0;
+for (var i = 0; i < 10000; ++i)
+    result += bar(i, i + 1, i + 2, i + 3);
+
+assertEq (result , 200040000);
